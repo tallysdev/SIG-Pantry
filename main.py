@@ -4,14 +4,13 @@
 
 import os
 
-os.system('clear')
+os.system('clc')
 print('#########################################')
 print('########## Menu Principal ###############')
 print('#########################################')
 print()
 print('\t introdução .....')
-print('Modolu de Produtos')
-print()
-print('Modulo de Itens')
-print()
-print('Modulo de Controle')
+print('\n \tModolo de Produtos')
+print('\n \tModulo de Feira')
+print('\n \tModulo de Controle de estoque \n ')
+print('#########################################')
