@@ -69,4 +69,4 @@ def remover_categoria():
     if(escolha >= len(categorias) or escolha <= 0):
         print("Categoria inexistente!")
     else:
-        categorias.pop(escolha);
+        categorias.pop(escolha)
