@@ -5,7 +5,7 @@ import os
 import produtos
 
 def menu_principal():
-    os.system('clr')
+    os.system('clear')
     print('#########################################')
     print('########## Menu Principal ###############')
     print('#########################################')
@@ -49,15 +49,4 @@ while opcao != 0:
         print("\n \t6 - Editar feira padrão")
         print('#########################################')
 
-    os.system('clc')
-    print('#########################################')
-    print('########## Menu Principal ###############')
-    print('#########################################')
-    print()
-    print('\t\t introdução .....')
-    print('\n \t1 - Modolo de Produtos')
-    print('\n \t2 - Modulo de Feira')
-    print('\n \t3 - Modulo de Controle de estoque')
-    print("\n \t0 - Sair")
-    print('#########################################')
-    opcao = int(input())
+    opcao = menu_principal()
