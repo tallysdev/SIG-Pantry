@@ -3,6 +3,7 @@
 #modulo de itens.
 import os
 import produtos
+import feira
 
 def menu_principal():
     os.system('clear')
