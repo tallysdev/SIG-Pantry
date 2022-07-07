@@ -78,5 +78,10 @@ def cadastrar_feira():
         sair = input('Deseja cadastrar mais um produto?')
         if sair !='sim':
             mais_um = False
+    return
+
+print(feira)
+
+def listar_feira():
+    print(hehe)
     
-    print(feira)
