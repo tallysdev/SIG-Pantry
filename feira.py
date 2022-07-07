@@ -1,13 +1,11 @@
 import produtos
 
 precos = []
+itens_p = []
+
 itens = []
 
-feira = {
-    
-    1: precos, 2: itens
-    
-    }
+feira = {}
 
 
 
@@ -16,7 +14,7 @@ feira = {
 mais_um = True
 
 def menu_feira():
-    os.system('clear')
+    print('\n\n')
     print('#########################################')
     print('############ Menu Feria ##############')
     print('#########################################')
@@ -32,7 +30,7 @@ def menu_feira():
 
         if opcao == '1':
             # def algo()
-            print('receba')
+            cadastrar_feira()
         
         elif opcao == '2':
             # def algo()
@@ -46,7 +44,7 @@ def menu_feira():
             # def algo()
             print('receba')
 
-        os.system('clear')
+        print('\n\n')
         print('#########################################')
         print('############ Menu Feria ##############')
         print('#########################################')
@@ -72,9 +70,14 @@ def cadastrar_feira():
     while mais_um !=False:
         item = input('informe o nome do produto')
         itens.append(item)
+        itens_p.append(item)
         preco = input('informe o preço do produo')
         precos.append(preco)
+        feira.update({chavef:itens})
+        feira.update({'Preços':preco})
+        feira.update({'Itens':itens_p})
         sair = input('Deseja cadastrar mais um produto?')
         if sair !='sim':
             mais_um = False
     
+    print(feira)
