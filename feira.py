@@ -7,10 +7,6 @@ itens = []
 
 feira = {}
 
-
-
-
-
 mais_um = True
 
 def menu_feira():
@@ -59,6 +55,7 @@ def menu_feira():
     return
 
 def cadastrar_feira():
+
     print('Comece cadatrando os itens por categoria')
     produtos.listar_categorias()
     vf = input('A categoria quer voce deseja cadastrar está na lista?\n\t Sim ou Nao')
@@ -67,7 +64,7 @@ def cadastrar_feira():
         produtos.listar_categorias()
     
     chavef = int(input('Deseja Cadatrar itens em qual categoria?')) -1
-    while mais_um !=False:
+    while mais_um != False:
         item = input('informe o nome do produto')
         itens.append(item)
         itens_p.append(item)
@@ -78,6 +75,6 @@ def cadastrar_feira():
         feira.update({'Itens':itens_p})
         sair = input('Deseja cadastrar mais um produto?')
         if sair !='sim':
-            mais_um = False
+            mais_um == False
     
     print(feira)
