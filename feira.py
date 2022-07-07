@@ -1,5 +1,7 @@
 import produtos
 
+import os
+
 precos = []
 itens_p = []
 
@@ -7,10 +9,10 @@ itens = []
 
 feira = {}
 
-mais_um = True
+
 
 def menu_feira():
-    print('\n\n')
+    os.system('clear')
     print('#########################################')
     print('############ Menu Feria ##############')
     print('#########################################')
@@ -18,7 +20,7 @@ def menu_feira():
     print('\n \t2 - Editar Feira')
     print('\n \t3 - Remover Feira ou \n\tItens da Ultima feira')
     print("\n \t4 - Listar Feira")
-    print("\n \t5 - Sair")
+    print("\n \t0 - Sair")
     print('#########################################')
     opcao = input()
 
@@ -40,7 +42,7 @@ def menu_feira():
             # def algo()
             print('receba')
 
-        print('\n\n')
+        os.system('clear')
         print('#########################################')
         print('############ Menu Feria ##############')
         print('#########################################')
@@ -48,14 +50,14 @@ def menu_feira():
         print('\n \t2 - Editar Feira')
         print('\n \t3 - Remover Feira ou \n\tItens da Ultima feira')
         print("\n \t4 - Listar Feira")
-        print("\n \t5 - Sair")
+        print("\n \t0 - Sair")
         print('#########################################')
         opcao = input()
             
     return
 
 def cadastrar_feira():
-
+    mais_um = True
     print('Comece cadatrando os itens por categoria')
     produtos.listar_categorias()
     vf = input('A categoria quer voce deseja cadastrar está na lista?\n\t Sim ou Nao')
@@ -71,10 +73,10 @@ def cadastrar_feira():
         preco = input('informe o preço do produo')
         precos.append(preco)
         feira.update({chavef:itens})
-        feira.update({'Preços':preco})
+        feira.update({'Preços':precos})
         feira.update({'Itens':itens_p})
         sair = input('Deseja cadastrar mais um produto?')
         if sair !='sim':
-            mais_um == False
+            mais_um = False
     
     print(feira)
