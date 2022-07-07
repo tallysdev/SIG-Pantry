@@ -3,6 +3,8 @@
 #modulo de itens.
 import os
 import produtos
+import feira
+
 
 def menu_principal():
     os.system('clear')
@@ -26,15 +28,7 @@ while opcao != 0:
         op = produtos.menu_produtos()
 
     elif opcao == 2 :
-        print('#########################################')
-        print('############ Menu Feira ##############')
-        print('#########################################')
-        print()
-        print('\n \t1 - Cadastrar item da feira')
-        print('\n \t2 - Editar editar item da feira')
-        print('\n \t3 - Remover item da feira')
-        print("\n \t4 - Listar feira")
-        print('#########################################')
+        op = feira.menu_feira()
 
     elif opcao == 3 :
         print('#########################################')
