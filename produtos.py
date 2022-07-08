@@ -1,9 +1,9 @@
 import os
 
-categorias = ['Limpeza', 'Alimentação', 'Higiene']
+categorias = {1: 'Limpeza', 2: 'Alimentação', 3: 'Higiene'}
 
 def menu_produtos():
-    os.system('clear')
+    os.system('cls')
     print('#########################################')
     print('############ Menu Produtos ##############')
     print('#########################################')
@@ -25,7 +25,7 @@ def menu_produtos():
         elif opcao == 4:
             listar_categorias()
         
-        os.system('clear')
+        os.system('cls')
         print('#########################################')
         print('############ Menu Produtos ##############')
         print('#########################################')
@@ -40,22 +40,24 @@ def menu_produtos():
     return
 
 def cadastrar_categoria():
+    index = len(categorias)
     nome = input("Nome da nova categoria: ")
-    categorias.append(nome)
+    categorias[index + 1] = nome
     
 def listar_categorias():
     print("-------------------")
     print("--- Categorias ----")
     print("-------------------")
-    for i in range(0, len(categorias)):
-        print('--- %d - %s ---' %(i+1, categorias[i]))
+    for key in categorias.keys():
+        print('--- %d - %s ---' %(key, categorias[key]))
+    input("Pressione enter para continuar...")
 
 def editar_categoria():
     listar_categorias()
 
-    escolha = int(input("Qual categoria deseja editar? ")) - 1
+    escolha = int(input("Qual categoria deseja editar? "))
 
-    if(escolha >= len(categorias) or escolha <= 0):
+    if not escolha in categorias.keys():
         print("Categoria inexistente!")
     else:
         novaCat = input("Novo nome da categoria: ")
@@ -64,9 +66,9 @@ def editar_categoria():
 def remover_categoria():
     listar_categorias()
 
-    escolha = int(input("Qual categoria deseja remover? ")) - 1
+    escolha = int(input("Qual categoria deseja remover? "))
 
-    if(escolha >= len(categorias) or escolha <= 0):
+    if not escolha in categorias.keys():
         print("Categoria inexistente!")
     else:
         categorias.pop(escolha)
