@@ -12,7 +12,7 @@ feira = {}
 
 
 def menu_feira():
-    os.system('clear')
+    os.system('cls')
     print('#########################################')
     print('############ Menu Feria ##############')
     print('#########################################')
@@ -42,7 +42,7 @@ def menu_feira():
             # def algo()
             print('receba')
 
-        os.system('clear')
+        os.system('cls')
         print('#########################################')
         print('############ Menu Feria ##############')
         print('#########################################')

@@ -3,7 +3,7 @@ import os
 categorias = {1: 'Limpeza', 2: 'Alimentação', 3: 'Higiene'}
 
 def menu_produtos():
-    os.system('clear')
+    os.system('cls')
     print('#########################################')
     print('############ Menu Produtos ##############')
     print('#########################################')
@@ -25,7 +25,7 @@ def menu_produtos():
         elif opcao == 4:
             listar_categorias()
         
-        os.system('clear')
+        os.system('cls')
         print('#########################################')
         print('############ Menu Produtos ##############')
         print('#########################################')
@@ -50,6 +50,7 @@ def listar_categorias():
     print("-------------------")
     for key in categorias.keys():
         print('--- %d - %s ---' %(key, categorias[key]))
+    input("Pressione enter para continuar...")
 
 def editar_categoria():
     listar_categorias()
