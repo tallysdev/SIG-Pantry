@@ -5,9 +5,15 @@ import os
 import produtos
 import feira
 
+def infos_projeto():
+    print('''
+    Dupla: Thomas Almeida e Tallys Aureliano
+    Projeto: SIG_Pantry
+    Versão: 0.01''')
+    input("Pressione enter para continuar..")
 
 def menu_principal():
-    os.system('clear')
+    os.system('cls')
     print('#########################################')
     print('########## Menu Principal ###############')
     print('#########################################')
@@ -16,6 +22,7 @@ def menu_principal():
     print('\n \t1 - Modolo de Produtos')
     print('\n \t2 - M1odulo de Feira')
     print('\n \t3 - Modulo de Controle de estoque')
+    print('\n \t9 - Informações do projeto')
     print("\n \t0 - Sair")
     print('#########################################')
     opcao = int(input())
@@ -42,5 +49,8 @@ while opcao != 0:
         print("\n \t5 - Criar feria padrão")
         print("\n \t6 - Editar feira padrão")
         print('#########################################')
+
+    elif opcao == 9:
+        infos_projeto()
 
     opcao = menu_principal()
