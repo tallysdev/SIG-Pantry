@@ -5,13 +5,13 @@ import os
 precos = []
 itens_p = []
 
-itens = []
+
 
 feira = {}
 codigosdebarra = []
 
 def texto():
-    os.system('cls')
+    
     print('#########################################')
     print('############ Menu Produtos ##############')
     print('#########################################')
@@ -43,14 +43,14 @@ def menu_feira():
 
         elif opcao == '4':
             # def algo()
-            print('receba')
+            listar()
 
         opcao = texto()
             
     return
 
 def cadastrar_feira():
-    os.system('cls')
+    
     print('#########################################')
     print('#######   Cadastras Produtos  ###########')
     print('#########################################')
@@ -62,6 +62,7 @@ def cadastrar_feira():
         produtos.listar_categorias()
     p=int(input('\n\t Informe quantos produtos deseja cadastrar \t'))
     for i in range(p):
+        itens = []
         codigob = input('informe o codigo de barra do produto\t')
         nome = input('Informe o nome do produto {}\t'.format(1+i))
         itens.append(nome)
@@ -107,3 +108,7 @@ def cadastrar_feira():
     #     if sair !='sim':
     #         mais_um = False
     # return
+
+def listar():
+    print(feira)
+    return
