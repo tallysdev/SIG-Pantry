@@ -10,8 +10,7 @@ itens = []
 feira = {}
 
 
-
-def menu_feira():
+def texto():
     os.system('cls')
     print('#########################################')
     print('############ Menu Feria ##############')
@@ -23,7 +22,11 @@ def menu_feira():
     print("\n \t0 - Sair")
     print('#########################################')
     opcao = input()
+    return opcao
 
+def menu_feira():
+    
+    opcao = texto()
     while opcao !='0':
 
         if opcao == '1':
@@ -42,17 +45,7 @@ def menu_feira():
             # def algo()
             print('receba')
 
-        os.system('cls')
-        print('#########################################')
-        print('############ Menu Feria ##############')
-        print('#########################################')
-        print('\n \t1 - Cadastrar Feira')
-        print('\n \t2 - Editar Feira')
-        print('\n \t3 - Remover Feira ou \n\tItens da Ultima feira')
-        print("\n \t4 - Listar Feira")
-        print("\n \t0 - Sair")
-        print('#########################################')
-        opcao = input()
+        opcao = texto()
             
     return
 
@@ -81,7 +74,3 @@ def cadastrar_feira():
     return
 
 print(feira)
-
-def listar_feira():
-    print(hehe)
-    
