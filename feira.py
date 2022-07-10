@@ -1,16 +1,18 @@
 import category
 
+import datetime
+
 import os
 
 precos = []
 itens_p = []
 
-
+datasdecompras = ['1','2']
 
 feira = {
-    1:['','','','','','','','',''],
-    '2':['','','','','','','','','',],
-    '3':['','','','','','','','','',]}
+    1:['','','','','','','','','','2022-07-10'],
+    '2':['','','','','','','','','','2022-07-10'],
+    '3':['','','','','','','','','','2022-07-10']}
 codigosdebarra = []
 
 def texto():
@@ -86,7 +88,13 @@ def cadastrar_feira():
         
         data = input('Informe a validade de {}\t' .format(nome))
 
-        feira.update({codigob:[nome,marca,cat,uni,min,atua,preco,data]})
+        data_compra = datetime.date.today()
+        datasdecompras.append(datasdecompras)
+
+        print(data_compra)
+        print(type(data_compra))
+
+        feira.update({codigob:[nome,marca,cat,uni,min,atua,preco,data,data_compra]})
 
     return
 
@@ -156,7 +164,7 @@ def editar_produtos():
         
         data = input('Informe a validade de {}\t' .format(nome))
 
-        feira.update({chaveaux:[nome,marca,cat,uni,min,atua,preco,data]})
+        feira.update({chaveaux:[nome,marca,cat,uni,min,atua,preco,data,feira[chaveaux][8]]})
     
     else:
        print('\nNão exite produto com esse nome.')
