@@ -6,14 +6,19 @@ import os
 
 precos = []
 itens_p = []
-zeze = str(datetime.date.today())
 
-datasdecompras = [zeze,'2022-07-11']
 
-feira = {'z':['a','b','c','d','e','f','g','h',zeze],
-            2:['a','b','c','d','e','f','g','h',zeze],
-            3:['a','b','c','d','e','f','g','h',zeze],
-            4:['a','b','c','d','e','f','g','h','2022-07-11']}
+datasdecompras = ['2022-07-10','2022-07-10','2022-07-10','2022-07-11','2022-07-12','2022-07-13','2022-07-13','2022-07-14']
+
+feira = {   1:['a','b','c','d','e','f','g','h','2022-07-10'],
+            2:['a','b','c','d','e','f','g','h','2022-07-10'],
+            3:['a','b','c','d','e','f','g','h','2022-07-10'],
+            4:['a','b','c','d','e','f','g','h','2022-07-11'],
+            5:['a','b','c','d','e','f','g','h','2022-07-12'],
+            6:['a','b','c','d','e','f','g','h','2022-07-13'],
+            7:['a','b','c','d','e','f','g','h','2022-07-13'],
+            8:['a','b','c','d','e','f','g','h','2022-07-14']}
+
 codigosdebarra = []
 
 def texto():
@@ -136,7 +141,8 @@ def listar():
         
         else:
             print('\nNão exite produto com esse nome.')
-
+            print('Só existe esses produtos:')
+            listartodos()
 
     return
 
