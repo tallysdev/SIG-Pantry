@@ -7,7 +7,7 @@ itens_p = []
 
 
 
-feira = {1:['fabs totosa','1','2','3','4','5','6','7','8',]}
+feira = {1:['tallys','1','2','3','4','5','6','7','8',], 2:['aureliano','1','2','3','4','5','6','7','8',]}
 codigosdebarra = []
 
 def texto():
@@ -18,7 +18,7 @@ def texto():
     print('\n \t1 - Cadastrar Produtos')
     print('\n \t2 - Editar Produtos')
     print('\n \t3 - Remover Produtos')
-    print("\n \t4 - Listar Produtos")
+    print("\n \t4 - Pesquisar nos Produtos")
     print("\n \t0 - Sair")
     print('#########################################')
     opcao = input()
@@ -94,16 +94,35 @@ def cadastrar_feira():
 
     return
 
+def listartodos():
+    for i in feira.keys():
+            print('\nCódigo de Barras:\t', i)
+            print('Nome:\t', feira[i][0])
+            print('Marca:\t', feira[i][1])
+            print('Categoria:\t', feira[i][2])
+            print('Unidade de medida:\t', feira[i][3])
+            print('Quantidade mínima necessária:\t', feira[i][4])
+            print('Quantidade comprada:\t', feira[i][5])
+            print('Preço:\t', feira[i][6])
+            print('Data de validade:\t', feira[i][7])
+    return
+
 def listar():
-    chaveaux = int(input('Informe o codigo de barras/t'))
-    print('nome', feira[chaveaux][0])
-    print('nome é', feira[chaveaux][1])
-    print('nome é', feira[chaveaux][2])
-    print('nome é', feira[chaveaux][3])
-    print('nome é', feira[chaveaux][4])
-    print('nome é', feira[chaveaux][5])
-    print('nome é', feira[chaveaux][6])
-    print('nome é', feira[chaveaux][7])
-    print('nome é', feira[chaveaux][8])
+    lembra = input('Voce lembra do Código de barras do produto?\t\n (S/N)')
+    if lembra !='S' or lembra !='s':
+        print('\nVeja se está na lista abaixo \n')
+        listartodos()
+
+    chaveaux = int(input('\nInforme o codigo de barras do produto desejado:\t'))
+    print('Código de Barras:\t', feira[chaveaux])
+    print('Nome:\t', feira[chaveaux][0])
+    print('Marca:\t', feira[chaveaux][1])
+    print('Categoria:\t', feira[chaveaux][2])
+    print('Unidade de medida:\t', feira[chaveaux][3])
+    print('Quantidade mínima necessária:\t', feira[chaveaux][4])
+    print('Quantidade comprada:\t', feira[chaveaux][5])
+    print('Preço:\t', feira[chaveaux][6])
+    print('Data de validade:\t', feira[chaveaux][7])
+
 
     return
