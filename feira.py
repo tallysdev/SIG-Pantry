@@ -6,10 +6,14 @@ import os
 
 precos = []
 itens_p = []
+zeze = str(datetime.date.today())
 
-datasdecompras = ['1','2']
+datasdecompras = [zeze,'2022-07-11']
 
-feira = {1:['a','b','c','d','e','f','g','h',datetime.date.today],1:['a','b','c','d','e','f','g','h',datetime.date.today],1:['a','b','c','d','e','f','g','h',datetime.date.today]}
+feira = {'z':['a','b','c','d','e','f','g','h',zeze],
+            2:['a','b','c','d','e','f','g','h',zeze],
+            3:['a','b','c','d','e','f','g','h',zeze],
+            4:['a','b','c','d','e','f','g','h','2022-07-11']}
 codigosdebarra = []
 
 def texto():
