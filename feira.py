@@ -1,4 +1,4 @@
-import produtos
+import category
 
 import os
 
@@ -54,11 +54,11 @@ def cadastrar_feira():
     print('#######   Cadastrar Produtos  ###########')
     print('#########################################')
     print('\n Comece cadastrando os itens por categoria')
-    produtos.listar_categorias()
+    category.listar_categorias()
     vf = input('A categoria quer voce deseja cadastrar está na lista?\n\t Sim ou Nao')
     if vf !='Sim' and vf !='sim':
-        produtos.cadastrar_categoria()
-        produtos.listar_categorias()
+        category.cadastrar_categoria()
+        category.listar_categorias()
     p=int(input('\n\t Informe quantos produtos deseja cadastrar \t'))
     for i in range(p):
         itens = []
