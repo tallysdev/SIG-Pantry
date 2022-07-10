@@ -7,7 +7,7 @@ itens_p = []
 
 
 
-feira = {}
+feira = {1:['fabs totosa','1','2','3','4','5','6','7','8',]}
 codigosdebarra = []
 
 def texto():
@@ -65,6 +65,7 @@ def cadastrar_feira():
         itens = []
         
         codigob = input('\ninforme o codigo de barra do produto {}\t'.format(i+1))
+        
         nome = input('Informe o nome do produto {}\t'.format(i+1))
         itens.append(nome)
         
@@ -94,5 +95,15 @@ def cadastrar_feira():
     return
 
 def listar():
-    print(feira)
+    chaveaux = int(input('Informe o codigo de barras/t'))
+    print('nome', feira[chaveaux][0])
+    print('nome é', feira[chaveaux][1])
+    print('nome é', feira[chaveaux][2])
+    print('nome é', feira[chaveaux][3])
+    print('nome é', feira[chaveaux][4])
+    print('nome é', feira[chaveaux][5])
+    print('nome é', feira[chaveaux][6])
+    print('nome é', feira[chaveaux][7])
+    print('nome é', feira[chaveaux][8])
+
     return
