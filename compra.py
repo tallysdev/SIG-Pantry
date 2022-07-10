@@ -1,20 +1,28 @@
+import datetime
 import feira
 
-# compras_do_dia_x
 cx = {}
-# codigosbarras_dos_produtos
 cp =[]
 z = []
-# for i in feira.feira.keys():
-#   cp.append(i)  
-# print(cp)
+tt = []
 
-for j in feira.datasdecompras:
-    for i in feira.feira.keys():
+for i in feira.feira.keys():
+    for j in feira.datasdecompras:
         if feira.feira[i][8] == j:
             cp.append(i)
-            cx.update({j:[cp,'somapreco']})
-
+            tam = len(cp)
+            tamaux = (tam -2)
+            v = []
+            for v in cp:
+                z.append(v)
+            t = z[tamaux]
+            u = z[tamaux+1]
+            if tamaux >= -1 and (feira.feira[v][8] == feira.feira[t][8] or feira.feira[v][8] == feira.feira[u][8]):
+                tt.append(i)
+                cx[j] = [tt,'somapreco']
+                print('aaa')
+            else:
+                cx[j] = [i,'somapreco']
 
 # cx.update({j:[cp,'somapreco']})
 print(cx)
