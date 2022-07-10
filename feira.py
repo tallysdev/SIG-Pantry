@@ -51,7 +51,7 @@ def menu_feira():
 def cadastrar_feira():
     os.system('cls')
     print('#########################################')
-    print('#######   Cadastras Produtos  ###########')
+    print('#######   Cadastrar Produtos  ###########')
     print('#########################################')
     print('\n Comece cadastrando os itens por categoria')
     produtos.listar_categorias()
@@ -100,14 +100,17 @@ def listartodos():
     return
 
 def listar():
-    lembra = input('Voce lembra do Código de barras do produto?\t\n (S/N)')
+    print('#########################################')
+    print('##########   Listar Produtos  ###########')
+    print('#########################################')
+    lembra = input('\nVoce lembra do Código de barras do produto?\t\n (S/N)')
     if lembra =='n' or lembra == 'N':
         print('\nVeja se está na lista abaixo \n')
         listartodos()
 
     else:
         chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
-        if chaveaux in feira:
+        if chaveaux in feira.keys():
             print('Código de Barras:\t', chaveaux)
             print('Nome:\t',feira([chaveaux][0]))
             print('Marca:\t', feira[chaveaux][1])
@@ -125,9 +128,12 @@ def listar():
     return
 
 def editar_produtos():
+    print('#########################################')
+    print('#########   Editar Produtos  ############')
+    print('#########################################')
     chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
     
-    if chaveaux in feira:
+    if chaveaux in feira.keys():
 
         nome = input('Informe o nome do produto:\t')
         
@@ -152,8 +158,11 @@ def editar_produtos():
        print('\nNão exite produto com esse nome.')
 
 def remover_produto():
+    print('#########################################')
+    print('########   Remover Produtos  ############')
+    print('#########################################')
     chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
-    if chaveaux in feira:
+    if chaveaux in feira.keys():
         feira.pop(chaveaux)
         print('Pronto, o produto {} foi removido'.format(chaveaux))
         
