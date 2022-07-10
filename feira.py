@@ -7,7 +7,7 @@ itens_p = []
 
 
 
-feira = {1:['tallys','1','2','3','4','5','6','7','8',], 2:['aureliano','1','2','3','4','5','6','7','8',]}
+feira = {1:['','','','','','','','','',]}
 codigosdebarra = []
 
 def texto():
@@ -67,30 +67,30 @@ def cadastrar_feira():
         codigob = input('\ninforme o codigo de barra do produto {}\t'.format(i+1))
         
         nome = input('Informe o nome do produto {}\t'.format(i+1))
-        itens.append(nome)
+        # itens.append(nome)
         
         marca = input('Informe a marca de {}\t' .format(nome))
-        itens.append(marca)
+        # itens.append(marca)
         
         cat = input('Informe a categoria de {}\t' .format(nome))
-        itens.append(cat)
+        # itens.append(cat)
         
         uni = input('Informe a porção de {} (em kg)\n se o produto não for de alimentação pode reponder com a categoria\t'.format(nome))
-        itens.append(uni)
+        # itens.append(uni)
         
         min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
-        itens.append(min)
+        # itens.append(min)
         
         atua = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
-        itens.append(atua)
+        # itens.append(atua)
         
         preco = input('Informe o preço de {}\t' .format(nome))
-        itens.append(preco)
+        # itens.append(preco)
         precos.append(preco)
         
         data = input('Informe a validade de {}\t' .format(nome))
-        itens.append(data)
-        feira.update({codigob:itens})
+        # itens.append(data)
+        feira.update({codigob:[nome,marca,cat,uni,min,atua,preco,data]})
 
     return
 
@@ -109,20 +109,23 @@ def listartodos():
 
 def listar():
     lembra = input('Voce lembra do Código de barras do produto?\t\n (S/N)')
-    if lembra !='S' or lembra !='s':
+    if lembra =='nao':
         print('\nVeja se está na lista abaixo \n')
         listartodos()
 
-    chaveaux = int(input('\nInforme o codigo de barras do produto desejado:\t'))
-    print('Código de Barras:\t', feira[chaveaux])
-    print('Nome:\t', feira[chaveaux][0])
-    print('Marca:\t', feira[chaveaux][1])
-    print('Categoria:\t', feira[chaveaux][2])
-    print('Unidade de medida:\t', feira[chaveaux][3])
-    print('Quantidade mínima necessária:\t', feira[chaveaux][4])
-    print('Quantidade comprada:\t', feira[chaveaux][5])
-    print('Preço:\t', feira[chaveaux][6])
-    print('Data de validade:\t', feira[chaveaux][7])
-
+    else:
+        chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
+        if feira.get([chaveaux][0]) == None:
+            print('\nNão exite produto com esse nome.')
+        else:
+            print('Código de Barras:\t', chaveaux)
+            print('Nome:\t',feira([chaveaux][0]))
+            print('Marca:\t', feira[chaveaux][1])
+            print('Categoria:\t', feira[chaveaux][2])
+            print('Unidade de medida:\t', feira[chaveaux][3])
+            print('Quantidade mínima necessária:\t', feira[chaveaux][4])
+            print('Quantidade comprada:\t', feira[chaveaux][5])
+            print('Preço:\t', feira[chaveaux][6])
+            print('Data de validade:\t', feira[chaveaux][7])
 
     return
