@@ -9,10 +9,7 @@ itens_p = []
 
 datasdecompras = ['1','2']
 
-feira = {
-    1:['','','','','','','','','','2022-07-10'],
-    '2':['','','','','','','','','','2022-07-10'],
-    '3':['','','','','','','','','','2022-07-10']}
+feira = {1:['a','b','c','d','e','f','g','h',datetime.date.today],1:['a','b','c','d','e','f','g','h',datetime.date.today],1:['a','b','c','d','e','f','g','h',datetime.date.today]}
 codigosdebarra = []
 
 def texto():
