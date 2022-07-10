@@ -7,7 +7,10 @@ itens_p = []
 
 
 
-feira = {1:['','','','','','','','','',]}
+feira = {
+    1:['','','','','','','','',''],
+    '2':['','','','','','','','','',],
+    '3':['','','','','','','','','',]}
 codigosdebarra = []
 
 def texto():
@@ -98,7 +101,7 @@ def listartodos():
 
 def listar():
     lembra = input('Voce lembra do Código de barras do produto?\t\n (S/N)')
-    if lembra =='nao':
+    if lembra =='n' or lembra == 'N':
         print('\nVeja se está na lista abaixo \n')
         listartodos()
 
@@ -151,7 +154,9 @@ def editar_produtos():
 def remover_produto():
     chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
     if chaveaux in feira:
+        feira.pop(chaveaux)
         print('Pronto, o produto {} foi removido'.format(chaveaux))
-        print(feira.pop([chaveaux]))
+        
+        
     else:
        print('\nNão exite produto com esse nome.')
