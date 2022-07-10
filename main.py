@@ -2,7 +2,7 @@
 #modulo de estoque de itens.
 #modulo de itens.
 import os
-import produtos
+import category
 import feira
 
 def infos_projeto():
@@ -32,7 +32,7 @@ opcao = menu_principal()
 while opcao != 0:
 
     if opcao == 1 :
-        op = produtos.menu_produtos()
+        op = category.menu_category()
 
     elif opcao == 2 :
         op = feira.menu_feira()
