@@ -21,7 +21,8 @@ def texto():
     print('\n \t1 - Cadastrar Produtos')
     print('\n \t2 - Editar Produtos')
     print('\n \t3 - Remover Produtos')
-    print("\n \t4 - Pesquisar nos Produtos")
+    print('\n \t4 - Pesquisar nos Produtos')
+    print('\n \t5 - Acessar Categorias')
     print("\n \t0 - Sair")
     print('#########################################')
     opcao = input()
@@ -43,6 +44,9 @@ def menu_feira():
 
         elif opcao == '4':
             listar()
+
+        elif opcao == '4':
+            op = category.menu_category()
 
         opcao = texto()
             
