@@ -30,19 +30,15 @@ def menu_feira():
     while opcao !='0':
 
         if opcao == '1':
-            # def algo()
             cadastrar_feira()
         
         elif opcao == '2':
-            # def algo()
-            print('receba')
+            editar_produtos()
 
         elif opcao == '3':
-            # def algo()
-            print('receba')
+            remover_produto()
 
         elif opcao == '4':
-            # def algo()
             listar()
 
         opcao = texto()
@@ -67,29 +63,22 @@ def cadastrar_feira():
         codigob = input('\ninforme o codigo de barra do produto {}\t'.format(i+1))
         
         nome = input('Informe o nome do produto {}\t'.format(i+1))
-        # itens.append(nome)
         
         marca = input('Informe a marca de {}\t' .format(nome))
-        # itens.append(marca)
         
         cat = input('Informe a categoria de {}\t' .format(nome))
-        # itens.append(cat)
         
         uni = input('Informe a porção de {} (em kg)\n se o produto não for de alimentação pode reponder com a categoria\t'.format(nome))
-        # itens.append(uni)
         
         min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
-        # itens.append(min)
         
         atua = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
-        # itens.append(atua)
         
         preco = input('Informe o preço de {}\t' .format(nome))
-        # itens.append(preco)
         precos.append(preco)
         
         data = input('Informe a validade de {}\t' .format(nome))
-        # itens.append(data)
+
         feira.update({codigob:[nome,marca,cat,uni,min,atua,preco,data]})
 
     return
@@ -115,9 +104,7 @@ def listar():
 
     else:
         chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
-        if feira.get([chaveaux][0]) == None:
-            print('\nNão exite produto com esse nome.')
-        else:
+        if chaveaux in feira:
             print('Código de Barras:\t', chaveaux)
             print('Nome:\t',feira([chaveaux][0]))
             print('Marca:\t', feira[chaveaux][1])
@@ -127,5 +114,44 @@ def listar():
             print('Quantidade comprada:\t', feira[chaveaux][5])
             print('Preço:\t', feira[chaveaux][6])
             print('Data de validade:\t', feira[chaveaux][7])
+        
+        else:
+            print('\nNão exite produto com esse nome.')
+
 
     return
+
+def editar_produtos():
+    chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
+    
+    if chaveaux in feira:
+
+        nome = input('Informe o nome do produto:\t')
+        
+        marca = input('Informe a marca de {}\t' .format(nome))
+        
+        cat = input('Informe a categoria de {}\t' .format(nome))
+        
+        uni = input('Informe a porção de {} (em kg)\n se o produto não for de alimentação pode reponder com a categoria\t'.format(nome))
+        
+        min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
+        
+        atua = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
+        
+        preco = input('Informe o preço de {}\t' .format(nome))
+        precos.append(preco)
+        
+        data = input('Informe a validade de {}\t' .format(nome))
+
+        feira.update({chaveaux:[nome,marca,cat,uni,min,atua,preco,data]})
+    
+    else:
+       print('\nNão exite produto com esse nome.')
+
+def remover_produto():
+    chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
+    if chaveaux in feira:
+        print('Pronto, o produto {} foi removido'.format(chaveaux))
+        print(feira.pop([chaveaux]))
+    else:
+       print('\nNão exite produto com esse nome.')
