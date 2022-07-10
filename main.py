@@ -2,7 +2,7 @@
 #modulo de estoque de itens.
 #modulo de itens.
 import os
-import category
+import compras
 import feira
 
 def infos_projeto():
@@ -20,7 +20,7 @@ def menu_principal():
     print()
     print('\t\t introdução .....')
     print('\n \t1 - Modolo de Produtos')
-    print('\n \t2 - M1odulo de Feira')
+    print('\n \t2 - Modulo de Compras')
     print('\n \t3 - Modulo de Controle de estoque')
     print('\n \t9 - Informações do projeto')
     print("\n \t0 - Sair")
@@ -32,10 +32,9 @@ opcao = menu_principal()
 while opcao != 0:
 
     if opcao == 1 :
-        op = category.menu_category()
-
-    elif opcao == 2 :
         op = feira.menu_feira()
+    elif opcao == 2 :
+        op = compras.menu_compras()
 
     elif opcao == 3 :
         print('#########################################')
