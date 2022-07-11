@@ -7,8 +7,8 @@ import os
 precos = []
 itens_p = []
 
-
-datasdecompras = ['2022-07-10','2022-07-10','2022-07-10','2022-07-11','2022-07-12','2022-07-13','2022-07-13','2022-07-14']
+# datascompras
+dc = ['2022-07-10','2022-07-10','2022-07-10','2022-07-11','2022-07-12','2022-07-13','2022-07-13','2022-07-14']
 
 feira = {   1:['a','b','c','d','e','f','g','h','2022-07-10'],
             2:['a','b','c','d','e','f','g','h','2022-07-10'],
@@ -17,7 +17,9 @@ feira = {   1:['a','b','c','d','e','f','g','h','2022-07-10'],
             5:['a','b','c','d','e','f','g','h','2022-07-12'],
             6:['a','b','c','d','e','f','g','h','2022-07-13'],
             7:['a','b','c','d','e','f','g','h','2022-07-13'],
-            8:['a','b','c','d','e','f','g','h','2022-07-14']}
+            8:['a','b','c','d','e','f','g','h','2022-07-14']
+            
+            }
 
 codigosdebarra = []
 
@@ -95,7 +97,7 @@ def cadastrar_feira():
         data = input('Informe a validade de {}\t' .format(nome))
 
         data_compra = datetime.date.today()
-        datasdecompras.append(datasdecompras)
+        dc.append(data_compra)
 
         print(data_compra)
         print(type(data_compra))
