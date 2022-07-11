@@ -1,13 +1,26 @@
-import produtos
+import category
+
+import datetime
 
 import os
 
 precos = []
 itens_p = []
 
+# datascompras
+dc = ['2022-07-10','2022-07-10','2022-07-10','2022-07-11','2022-07-12','2022-07-13','2022-07-13','2022-07-14']
 
+feira = {   1:['a','b','c','d','e','f','g','h','2022-07-10'],
+            2:['a','b','c','d','e','f','g','h','2022-07-10'],
+            3:['a','b','c','d','e','f','g','h','2022-07-10'],
+            4:['a','b','c','d','e','f','g','h','2022-07-11'],
+            5:['a','b','c','d','e','f','g','h','2022-07-12'],
+            6:['a','b','c','d','e','f','g','h','2022-07-13'],
+            7:['a','b','c','d','e','f','g','h','2022-07-13'],
+            8:['a','b','c','d','e','f','g','h','2022-07-14']
+            
+            }
 
-feira = {1:['','','','','','','','','',]}
 codigosdebarra = []
 
 def texto():
@@ -18,7 +31,8 @@ def texto():
     print('\n \t1 - Cadastrar Produtos')
     print('\n \t2 - Editar Produtos')
     print('\n \t3 - Remover Produtos')
-    print("\n \t4 - Pesquisar nos Produtos")
+    print('\n \t4 - Pesquisar nos Produtos')
+    print('\n \t5 - Acessar Categorias')
     print("\n \t0 - Sair")
     print('#########################################')
     opcao = input()
@@ -41,6 +55,9 @@ def menu_feira():
         elif opcao == '4':
             listar()
 
+        elif opcao == '4':
+            op = category.menu_category()
+
         opcao = texto()
             
     return
@@ -48,14 +65,14 @@ def menu_feira():
 def cadastrar_feira():
     os.system('cls')
     print('#########################################')
-    print('#######   Cadastras Produtos  ###########')
+    print('#######   Cadastrar Produtos  ###########')
     print('#########################################')
     print('\n Comece cadastrando os itens por categoria')
-    produtos.listar_categorias()
+    category.listar_categorias()
     vf = input('A categoria quer voce deseja cadastrar está na lista?\n\t Sim ou Nao')
     if vf !='Sim' and vf !='sim':
-        produtos.cadastrar_categoria()
-        produtos.listar_categorias()
+        category.cadastrar_categoria()
+        category.listar_categorias()
     p=int(input('\n\t Informe quantos produtos deseja cadastrar \t'))
     for i in range(p):
         itens = []
@@ -79,7 +96,13 @@ def cadastrar_feira():
         
         data = input('Informe a validade de {}\t' .format(nome))
 
-        feira.update({codigob:[nome,marca,cat,uni,min,atua,preco,data]})
+        data_compra = datetime.date.today()
+        dc.append(data_compra)
+
+        print(data_compra)
+        print(type(data_compra))
+
+        feira.update({codigob:[nome,marca,cat,uni,min,atua,preco,data,data_compra]})
 
     return
 
@@ -97,14 +120,17 @@ def listartodos():
     return
 
 def listar():
-    lembra = input('Voce lembra do Código de barras do produto?\t\n (S/N)')
-    if lembra =='nao':
+    print('#########################################')
+    print('##########   Listar Produtos  ###########')
+    print('#########################################')
+    lembra = input('\nVoce lembra do Código de barras do produto?\t\n (S/N)')
+    if lembra =='n' or lembra == 'N':
         print('\nVeja se está na lista abaixo \n')
         listartodos()
 
     else:
         chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
-        if chaveaux in feira:
+        if chaveaux in feira.keys():
             print('Código de Barras:\t', chaveaux)
             print('Nome:\t',feira([chaveaux][0]))
             print('Marca:\t', feira[chaveaux][1])
@@ -117,14 +143,18 @@ def listar():
         
         else:
             print('\nNão exite produto com esse nome.')
-
+            print('Só existe esses produtos:')
+            listartodos()
 
     return
 
 def editar_produtos():
+    print('#########################################')
+    print('#########   Editar Produtos  ############')
+    print('#########################################')
     chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
     
-    if chaveaux in feira:
+    if chaveaux in feira.keys():
 
         nome = input('Informe o nome do produto:\t')
         
@@ -143,15 +173,20 @@ def editar_produtos():
         
         data = input('Informe a validade de {}\t' .format(nome))
 
-        feira.update({chaveaux:[nome,marca,cat,uni,min,atua,preco,data]})
+        feira.update({chaveaux:[nome,marca,cat,uni,min,atua,preco,data,feira[chaveaux][8]]})
     
     else:
        print('\nNão exite produto com esse nome.')
 
 def remover_produto():
+    print('#########################################')
+    print('########   Remover Produtos  ############')
+    print('#########################################')
     chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
-    if chaveaux in feira:
+    if chaveaux in feira.keys():
+        feira.pop(chaveaux)
         print('Pronto, o produto {} foi removido'.format(chaveaux))
-        print(feira.pop([chaveaux]))
+        
+        
     else:
        print('\nNão exite produto com esse nome.')

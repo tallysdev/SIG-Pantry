@@ -2,7 +2,7 @@ import os
 
 categorias = {1: 'Limpeza', 2: 'Alimentação', 3: 'Higiene'}
 
-def menu_produtos():
+def menu_category():
     os.system('cls')
     print('#########################################')
     print('############ Menu Produtos ##############')
