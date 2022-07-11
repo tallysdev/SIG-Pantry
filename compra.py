@@ -31,12 +31,12 @@ tt = []
         #     else:
         #         tt = []
         #         cx[j] = [i,'somapreco']
-
-tam = len(feira.datasdecompras)
+datas = feira.get_datas()
+tam = len(datas)
 auxtam = tam - 1
 for i in feira.feira.keys():
     auxtam = auxtam - 1
-    if feira.datasdecompras[auxtam] == feira.feira[i][8]:
+    if datas[auxtam] == feira.feira[i][8]:
         tt.append(i)
         cx[feira.feira[i][8]] = [tt,'preços']
     else:

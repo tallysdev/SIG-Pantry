@@ -190,3 +190,13 @@ def remover_produto():
         
     else:
        print('\nNão exite produto com esse nome.')
+
+def get_datas():
+    datas = {}
+    for i in feira.keys():
+        data = feira[i][8]
+        if data in datas.keys():
+            datas[data] += [i]
+        else:
+            datas += {data : [i]}
+    print(datas)
