@@ -74,15 +74,15 @@ def cadastrar_feira():
     for i in range(p):
         itens = []
         
-        codigob = input('\ninforme o codigo de barra do produto {}\t'.format(i+1))
+        codigob = input('\nInforme o codigo de barra do produto {}\t'.format(i+1))
         
         nome = input('Informe o nome do produto {}\t'.format(i+1))
         
         cat = input('Informe a categoria de {}\t' .format(nome))
         
-        min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
+        qtd_min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
         
-        atua = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
+        qtd = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
         
         preco = input('Informe o preço de {}\t' .format(nome))
         precos.append(preco)
@@ -95,7 +95,7 @@ def cadastrar_feira():
         print(data_compra)
         print(type(data_compra))
 
-        feira.update({codigob:[nome,marca,cat,uni,min,atua,preco,data,data_compra]})
+        feira.update({codigob:[nome,cat,qtd_min,qtd,preco,data,data_compra]})
 
     return
 
@@ -148,18 +148,16 @@ def editar_produtos():
         
         cat = input('Informe a categoria de {}\t' .format(nome))
         
-        uni = input('Informe a porção de {} (em kg)\n se o produto não for de alimentação pode reponder com a categoria\t'.format(nome))
+        qtd_min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
         
-        min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
-        
-        atua = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
+        qtd = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
         
         preco = input('Informe o preço de {}\t' .format(nome))
         precos.append(preco)
         
         data = input('Informe a validade de {}\t' .format(nome))
 
-        feira.update({chaveaux:[nome,marca,cat,uni,min,atua,preco,data,feira[chaveaux][8]]})
+        feira.update({chaveaux:[nome,cat,qtd_min,qtd,preco,data,feira[chaveaux][8]]})
     
     else:
        print('\nNão exite produto com esse nome.')
