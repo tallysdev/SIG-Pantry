@@ -25,7 +25,11 @@ def menu_principal():
     print('\n \t9 - Informações do projeto')
     print("\n \t0 - Sair")
     print('#########################################')
-    opcao = int(input())
+    try:
+        opcao = int(input())
+    except:
+        print("Opção inválida! Tente novamente.")
+        opcao = int(input())
     return opcao
 
 opcao = menu_principal()

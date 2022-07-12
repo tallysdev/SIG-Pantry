@@ -1,48 +1,10 @@
 import datetime
 import feira
 import category
+import os
 
 # compras do dia x
-cx = {}
-
-cp2 =[]
-
-z = []
-
-tt = []
-
-#alto grau de complexidade
-
-#    for j in feira.datasdecompras:
-#         # 
-        # if feira.feira[i][8] == j:
-        #     cp2.append(i)
-        #     tam = len(cp2)
-        #     tamaux = (tam -2)
-        #     v = []
-        #     for v in cp2:
-        #         z.append(v)
-        #     auxz = len(z)
-        #     t = z[tamaux]
-        #     u = z[tamaux+1]
-        #     if tamaux >= -1 and (feira.feira[v][8] == feira.feira[t][8] or feira.feira[v][8] == feira.feira[u][8]):
-        #         tt.append(i)
-        #         cx[j] = [tt,'somapreco']
-        #     else:
-        #         tt = []
-        #         cx[j] = [i,'somapreco']
-datas = feira.get_datas()
-tam = len(datas)
-auxtam = tam - 1
-for i in feira.feira.keys():
-    auxtam = auxtam - 1
-    if datas[auxtam] == feira.feira[i][8]:
-        tt.append(i)
-        cx[feira.feira[i][8]] = [tt,'preços']
-    else:
-        cx[feira.feira[i][8]] = [i,'preços']
-    
-print(cx)
+cx = feira.get_datas()
 
 def menu_compra():
     opcao = texto()
@@ -70,12 +32,12 @@ def menu_compra():
     return
 
 def texto():
-    
+    os.system('cls')
     print('#########################################')
     print('############ Menu Compras ##############')
     print('#########################################')
     print('\n \t1 - Pesquisar nas Compras')
-    print('\n \t3 - Remover Remover Compra')
+    print('\n \t3 - Remover Compra')
     print('\n \t4 - Acessar Produtos')
     print("\n \t0 - Sair")
     print('#########################################')
@@ -84,9 +46,13 @@ def texto():
 
 def listartodos():
     for i in cx.keys():
-            print('\nData::\t', i)
-            print('Produtos por codigo de barra\t', cx[i][0])
-            print('Preço\t', cx[i][1])
+            print('----------------------\n')
+            print('Data::\t', i)
+            for j in range(0, len(cx[i])):
+                print('\nProduto: \t', cx[i][j][0])
+                print('Qtd. comprada: \t', cx[i][j][1])
+                print('Preço: \t', cx[i][j][2])
+    input("\nPressione enter para continuar...")
     return
 
 def pesquisa_compra():
@@ -98,13 +64,15 @@ def pesquisa_compra():
     if lembra =='n' or lembra == 'N':
         print('\nVeja se está na lista abaixo \n')
         listartodos()
-
     else:
-        chaveaux = datetime.date(input('\nInforme a data da compra desejada:\t'))
-        if chaveaux in feira.keys():
-            print('\nData::\t', chaveaux)
-            print('Produtos por codigo de barra\t', cx[chaveaux][0])
-            print('Preço\t', cx[chaveaux][1])
+        chaveaux = input('\nInforme a data da compra desejada (AAAA-MM-DD):\t')
+        if chaveaux in cx.keys():
+            print('Data::\t', chaveaux)
+            for j in range(0, len(cx[chaveaux])):
+                print('\nProduto: \t', cx[chaveaux][j][0])
+                print('Qtd. comprada: \t', cx[chaveaux][j][1])
+                print('Preço: \t', cx[chaveaux][j][2])
+            input("Pressione enter para continuar...")
         
         else:
             print('\nNão Compra com essa Data.')
