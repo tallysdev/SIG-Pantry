@@ -90,7 +90,7 @@ def cadastrar_feira():
         data = input('Informe a validade de {} (DD-MM-AAAA)\t' .format(nome))
 
         data_compra = datetime.date.today()
-        dc.append(data_compra)
+        # dc.append(data_compra)
 
         print(data_compra)
         print(type(data_compra))
