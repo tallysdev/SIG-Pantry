@@ -14,8 +14,7 @@ def menu_compra():
             editar_compra()
 
         elif opcao == '3':
-            print()
-            # remover_produto()
+            remover_compra()
 
         elif opcao == '4':
             op = category.menu_category()
@@ -71,7 +70,7 @@ def pesquisa_compra():
             input("Pressione enter para continuar...")
         
         else:
-            print('\nNão Compra com essa Data.')
+            print('\nNão existe compra com essa data.')
             print('Só existe esses produtos:')
             listartodos()
 
@@ -96,7 +95,35 @@ def editar_compra():
         input("Pressione enter para continuar...")
     
     else:
-        print('\nNão Compra com essa Data.')
+        print('\nNão existe compra com essa data.')
+        print('Só existe esses produtos:')
+        listartodos()
+
+def remover_compra():
+    cx = feira.get_datas()
+    lembra = input('\nVoce lembra a Data da Compra?\t\n (S/N)\t')
+    if lembra =='n' or lembra == 'N':
+        print('\nVeja se está na lista abaixo \n')
+        listartodos()
+
+    chaveaux = input('\nInforme a data da compra que deseja remover (AAAA-MM-DD):\t')
+    if chaveaux in cx.keys():
+        toda = input("Deseja remover todos os produtos dessa compra (S/N)?")
+        if toda.lower() == 's':
+            for j in range(len(cx[chaveaux])):
+                feira.feira.pop(cx[chaveaux][j][0])
+        else:
+            prods = []
+            qnt = int(input("Quantos produtos deseja remover da compra? "))
+            for i in range(qnt):
+                prod = int(input("Informe o código do produto %d:" %(i+1)))
+                prods.append(prod)
+            for j in range(len(cx[chaveaux])):
+                if cx[chaveaux][j][0] in prods:
+                    feira.feira.pop(cx[chaveaux][j][0])
+
+    else:
+        print('\nNão existe compra com essa data.')
         print('Só existe esses produtos:')
         listartodos()
 
