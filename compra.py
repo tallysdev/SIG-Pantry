@@ -3,9 +3,6 @@ import feira
 import category
 import os
 
-# compras do dia x
-cx = feira.get_datas()
-
 def menu_compra():
     opcao = texto()
     while opcao !='0':
@@ -14,16 +11,10 @@ def menu_compra():
             pesquisa_compra()
         
         elif opcao == '2':
-            print()
-            # editar_produtos()
+            editar_compra()
 
         elif opcao == '3':
-            print()
-            # remover_produto()
-
-        elif opcao == '4':
-            print()
-            # listar()
+            remover_compra()
 
         elif opcao == '4':
             op = category.menu_category()
@@ -37,14 +28,18 @@ def texto():
     print('############ Menu Compras ##############')
     print('#########################################')
     print('\n \t1 - Pesquisar nas Compras')
+    print('\n \t2 - Editar Compra')
     print('\n \t3 - Remover Compra')
-    print('\n \t4 - Acessar Produtos')
     print("\n \t0 - Sair")
     print('#########################################')
     opcao = input()
     return opcao
 
 def listartodos():
+    cx = feira.get_datas()
+    print('#########################################')
+    print('##########   Listar Compras  ############')
+    print('#########################################')
     for i in cx.keys():
             print('----------------------\n')
             print('Data::\t', i)
@@ -56,9 +51,9 @@ def listartodos():
     return
 
 def pesquisa_compra():
-
+    cx = feira.get_datas()
     print('#########################################')
-    print('##########   Listar Compras  ###########')
+    print('##########   Pesquisar Compra  ##########')
     print('#########################################')
     lembra = input('\nVoce lembra a Data da Compra?\t\n (S/N)\t')
     if lembra =='n' or lembra == 'N':
@@ -75,6 +70,60 @@ def pesquisa_compra():
             input("Pressione enter para continuar...")
         
         else:
-            print('\nNão Compra com essa Data.')
+            print('\nNão existe compra com essa data.')
             print('Só existe esses produtos:')
             listartodos()
+
+def editar_compra():
+    cx = feira.get_datas()
+    lembra = input('\nVoce lembra a Data da Compra?\t\n (S/N)\t')
+    if lembra =='n' or lembra == 'N':
+        print('\nVeja se está na lista abaixo \n')
+        listartodos()
+
+    chaveaux = input('\nInforme a data da compra que deseja editar (AAAA-MM-DD):\t')
+    if chaveaux in cx.keys():
+        print('Data::\t', chaveaux)
+        for j in range(0, len(cx[chaveaux])):
+            print('\nProduto: \t', cx[chaveaux][j][0])
+            print('Qtd. comprada: \t', cx[chaveaux][j][1])
+            nova_qtd = input("Nova quantidade: ");
+            print('Preço: \t', cx[chaveaux][j][2])
+            novo_preco = input("Novo preço: ")
+            feira.feira[cx[chaveaux][j][0]][3] = nova_qtd
+            feira.feira[cx[chaveaux][j][0]][4] = novo_preco
+        input("Pressione enter para continuar...")
+    
+    else:
+        print('\nNão existe compra com essa data.')
+        print('Só existe esses produtos:')
+        listartodos()
+
+def remover_compra():
+    cx = feira.get_datas()
+    lembra = input('\nVoce lembra a Data da Compra?\t\n (S/N)\t')
+    if lembra =='n' or lembra == 'N':
+        print('\nVeja se está na lista abaixo \n')
+        listartodos()
+
+    chaveaux = input('\nInforme a data da compra que deseja remover (AAAA-MM-DD):\t')
+    if chaveaux in cx.keys():
+        toda = input("Deseja remover todos os produtos dessa compra (S/N)?")
+        if toda.lower() == 's':
+            for j in range(len(cx[chaveaux])):
+                feira.feira.pop(cx[chaveaux][j][0])
+        else:
+            prods = []
+            qnt = int(input("Quantos produtos deseja remover da compra? "))
+            for i in range(qnt):
+                prod = int(input("Informe o código do produto %d:" %(i+1)))
+                prods.append(prod)
+            for j in range(len(cx[chaveaux])):
+                if cx[chaveaux][j][0] in prods:
+                    feira.feira.pop(cx[chaveaux][j][0])
+
+    else:
+        print('\nNão existe compra com essa data.')
+        print('Só existe esses produtos:')
+        listartodos()
+

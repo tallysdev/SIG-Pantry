@@ -74,26 +74,22 @@ def cadastrar_feira():
     for i in range(p):
         itens = []
         
-        codigob = input('\nInforme o codigo de barra do produto {}\t'.format(i+1))
+        codigob = input('\nInforme o codigo de barra do produto:{}\t'.format(i+1))
         
-        nome = input('Informe o nome do produto {}\t'.format(i+1))
+        nome = input('Informe o nome do produto {}:\t'.format(i+1))
         
-        cat = input('Informe a categoria de {}\t' .format(nome))
+        cat = input('Informe a categoria de {}:\t' .format(nome))
         
         qtd_min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
         
-        qtd = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
+        qtd = input('Informe a quantitade que voce comprou de {}:\t' .format(nome))
         
-        preco = input('Informe o preço de {}\t' .format(nome))
+        preco = input('Informe o preço de {}:\t' .format(nome))
         precos.append(preco)
         
-        data = input('Informe a validade de {} (DD-MM-AAAA)\t' .format(nome))
+        data = input('Informe a validade de {}: (DD-MM-AAAA)\t' .format(nome))
 
         data_compra = datetime.date.today()
-        # dc.append(data_compra)
-
-        print(data_compra)
-        print(type(data_compra))
 
         feira.update({codigob:[nome,cat,qtd_min,qtd,preco,data,data_compra]})
 
@@ -101,13 +97,14 @@ def cadastrar_feira():
 
 def listartodos():
     for i in feira.keys():
-            print('Código de Barras:\t', i)
-            print('Nome:\t',feira[i][0])
-            print('Categoria:\t', feira[i][1])
-            print('Quantidade mínima:\t', feira[i][2])
-            print('Quantidade comprada:\t', feira[i][3])
-            print('Preço:\t', feira[i][4])
-            print('Data de validade:\t', feira[i][5],'\n')
+        print('Código de Barras:\t', i)
+        print('Nome:\t',feira[i][0])
+        print('Categoria:\t', feira[i][1])
+        print('Quantidade mínima:\t', feira[i][2])
+        print('Quantidade comprada:\t', feira[i][3])
+        print('Preço:\t', feira[i][4])
+        print('Data de validade:\t', feira[i][5],'\n')
+    input("Pressione enter para continuar...")
     return
 
 def listar():
