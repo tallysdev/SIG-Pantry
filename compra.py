@@ -3,9 +3,6 @@ import feira
 import category
 import os
 
-# compras do dia x
-cx = feira.get_datas()
-
 def menu_compra():
     opcao = texto()
     while opcao !='0':
@@ -45,6 +42,7 @@ def texto():
     return opcao
 
 def listartodos():
+    cx = feira.get_datas()
     for i in cx.keys():
             print('----------------------\n')
             print('Data::\t', i)
@@ -56,7 +54,7 @@ def listartodos():
     return
 
 def pesquisa_compra():
-
+    cx = feira.get_datas()
     print('#########################################')
     print('##########   Listar Compras  ###########')
     print('#########################################')
