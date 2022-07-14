@@ -17,7 +17,7 @@ def menu_compra():
             remover_compra()
 
         elif opcao == '4':
-            op = category.menu_category()
+            get_precototal()
 
         opcao = texto()
     return
@@ -30,6 +30,7 @@ def texto():
     print('\n \t1 - Pesquisar nas Compras')
     print('\n \t2 - Editar Compra')
     print('\n \t3 - Remover Compra')
+    print('\n \t4 - Consultar preços por data')
     print("\n \t0 - Sair")
     print('#########################################')
     opcao = input()
@@ -140,4 +141,22 @@ def remover_compra():
         print('\nNão existe compra com essa data.')
         print('Só existe esses produtos:')
         listartodos()
+
+def get_precototal():
+    cx = feira.get_datas()
+    precos = {'total': 0}
+    for i in cx.keys():
+        preco_data = 0
+        for j in range(0, len(cx[i])):
+            try:
+                precoUnit = float(cx[i][j][2])
+                precos['total'] += precoUnit
+                preco_data += precoUnit
+            except:
+                continue
+        precos[i] = preco_data
+    print(precos)
+    input("Pressione enter para continuar...")
+
+
 
