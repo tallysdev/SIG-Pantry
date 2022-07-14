@@ -7,24 +7,21 @@ import os
 precos = []
 itens_p = []
 
-# datascompras
-dc = ['2022-07-10','2022-07-10','2022-07-10','2022-07-11','2022-07-12','2022-07-13','2022-07-13','2022-07-14']
-
-feira = {   1:['a','b','c','d','e','f','g','h','2022-07-10'],
-            2:['a','b','c','d','e','f','g','h','2022-07-10'],
-            3:['a','b','c','d','e','f','g','h','2022-07-10'],
-            4:['a','b','c','d','e','f','g','h','2022-07-11'],
-            5:['a','b','c','d','e','f','g','h','2022-07-12'],
-            6:['a','b','c','d','e','f','g','h','2022-07-13'],
-            7:['a','b','c','d','e','f','g','h','2022-07-13'],
-            8:['a','b','c','d','e','f','g','h','2022-07-14']
+feira = {   1:['nome','categoria','qtd_min','qtd','2.5','data_val','2022-07-10'],
+            2:['nome','categoria','qtd_min','qtd','5.8','data_val','2022-07-10'],
+            3:['nome','categoria','qtd_min','qtd','6.9','data_val','2022-07-10'],
+            4:['nome','categoria','qtd_min','qtd','5.1','data_val','2022-07-11'],
+            5:['nome','categoria','qtd_min','qtd','1','data_val','2022-07-12'],
+            6:['nome','categoria','qtd_min','qtd','2','data_val','2022-07-13'],
+            7:['nome','categoria','qtd_min','qtd','3','data_val','2022-07-13'],
+            8:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-14']
             
             }
 
 codigosdebarra = []
 
 def texto():
-    
+    os.system('cls')
     print('#########################################')
     print('############ Menu Produtos ##############')
     print('#########################################')
@@ -77,46 +74,37 @@ def cadastrar_feira():
     for i in range(p):
         itens = []
         
-        codigob = input('\ninforme o codigo de barra do produto {}\t'.format(i+1))
+        codigob = input('\nInforme o codigo de barra do produto:{}\t'.format(i+1))
         
-        nome = input('Informe o nome do produto {}\t'.format(i+1))
+        nome = input('Informe o nome do produto {}:\t'.format(i+1))
         
-        marca = input('Informe a marca de {}\t' .format(nome))
+        cat = input('Informe a categoria de {}:\t' .format(nome))
         
-        cat = input('Informe a categoria de {}\t' .format(nome))
+        qtd_min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
         
-        uni = input('Informe a porção de {} (em kg)\n se o produto não for de alimentação pode reponder com a categoria\t'.format(nome))
+        qtd = input('Informe a quantitade que voce comprou de {}:\t' .format(nome))
         
-        min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
-        
-        atua = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
-        
-        preco = input('Informe o preço de {}\t' .format(nome))
+        preco = input('Informe o preço de {}:\t' .format(nome))
         precos.append(preco)
         
-        data = input('Informe a validade de {}\t' .format(nome))
+        data = input('Informe a validade de {}: (DD-MM-AAAA)\t' .format(nome))
 
         data_compra = datetime.date.today()
-        dc.append(data_compra)
 
-        print(data_compra)
-        print(type(data_compra))
-
-        feira.update({codigob:[nome,marca,cat,uni,min,atua,preco,data,data_compra]})
+        feira.update({codigob:[nome,cat,qtd_min,qtd,preco,data,data_compra]})
 
     return
 
 def listartodos():
     for i in feira.keys():
-            print('\nCódigo de Barras:\t', i)
-            print('Nome:\t', feira[i][0])
-            print('Marca:\t', feira[i][1])
-            print('Categoria:\t', feira[i][2])
-            print('Unidade de medida:\t', feira[i][3])
-            print('Quantidade mínima necessária:\t', feira[i][4])
-            print('Quantidade comprada:\t', feira[i][5])
-            print('Preço:\t', feira[i][6])
-            print('Data de validade:\t', feira[i][7])
+        print('Código de Barras:\t', i)
+        print('Nome:\t',feira[i][0])
+        print('Categoria:\t', feira[i][1])
+        print('Quantidade mínima:\t', feira[i][2])
+        print('Quantidade comprada:\t', feira[i][3])
+        print('Preço:\t', feira[i][4])
+        print('Data de validade:\t', feira[i][5],'\n')
+    input("Pressione enter para continuar...")
     return
 
 def listar():
@@ -127,19 +115,16 @@ def listar():
     if lembra =='n' or lembra == 'N':
         print('\nVeja se está na lista abaixo \n')
         listartodos()
-
     else:
         chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
         if chaveaux in feira.keys():
             print('Código de Barras:\t', chaveaux)
-            print('Nome:\t',feira([chaveaux][0]))
-            print('Marca:\t', feira[chaveaux][1])
-            print('Categoria:\t', feira[chaveaux][2])
-            print('Unidade de medida:\t', feira[chaveaux][3])
-            print('Quantidade mínima necessária:\t', feira[chaveaux][4])
-            print('Quantidade comprada:\t', feira[chaveaux][5])
-            print('Preço:\t', feira[chaveaux][6])
-            print('Data de validade:\t', feira[chaveaux][7])
+            print('Nome:\t',feira[chaveaux][0])
+            print('Categoria:\t', feira[chaveaux][1])
+            print('Quantidade mínima:\t', feira[chaveaux][2])
+            print('Quantidade comprada:\t', feira[chaveaux][3])
+            print('Preço:\t', feira[chaveaux][4])
+            print('Data de validade:\t', feira[chaveaux][5], '\n')
         
         else:
             print('\nNão exite produto com esse nome.')
@@ -158,22 +143,18 @@ def editar_produtos():
 
         nome = input('Informe o nome do produto:\t')
         
-        marca = input('Informe a marca de {}\t' .format(nome))
-        
         cat = input('Informe a categoria de {}\t' .format(nome))
         
-        uni = input('Informe a porção de {} (em kg)\n se o produto não for de alimentação pode reponder com a categoria\t'.format(nome))
+        qtd_min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
         
-        min = input('Informe a quantidade minima que voce precisa de {} no mês\t'.format(nome))
-        
-        atua = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
+        qtd = input('Informe a quantitade que voce comprou de {}\t' .format(nome))
         
         preco = input('Informe o preço de {}\t' .format(nome))
         precos.append(preco)
         
         data = input('Informe a validade de {}\t' .format(nome))
 
-        feira.update({chaveaux:[nome,marca,cat,uni,min,atua,preco,data,feira[chaveaux][8]]})
+        feira.update({chaveaux:[nome,cat,qtd_min,qtd,preco,data,feira[chaveaux][8]]})
     
     else:
        print('\nNão exite produto com esse nome.')
@@ -190,3 +171,13 @@ def remover_produto():
         
     else:
        print('\nNão exite produto com esse nome.')
+
+def get_datas():
+    datas = {}
+    for i in feira.keys():
+        data = feira[i][6]
+        if data in datas.keys():
+            datas[data].append([i , feira[i][3], feira[i][4]])
+        else:
+            datas[data] = [[i, feira[i][3], feira[i][4]]]
+    return datas
