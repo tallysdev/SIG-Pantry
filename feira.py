@@ -7,13 +7,13 @@ import os
 precos = []
 itens_p = []
 
-feira = {   1:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-10'],
-            2:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-10'],
-            3:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-10'],
-            4:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-11'],
-            5:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-12'],
-            6:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-13'],
-            7:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-13'],
+feira = {   1:['nome','categoria','qtd_min','qtd','2.5','data_val','2022-07-10'],
+            2:['nome','categoria','qtd_min','qtd','5.8','data_val','2022-07-10'],
+            3:['nome','categoria','qtd_min','qtd','6.9','data_val','2022-07-10'],
+            4:['nome','categoria','qtd_min','qtd','5.1','data_val','2022-07-11'],
+            5:['nome','categoria','qtd_min','qtd','1','data_val','2022-07-12'],
+            6:['nome','categoria','qtd_min','qtd','2','data_val','2022-07-13'],
+            7:['nome','categoria','qtd_min','qtd','3','data_val','2022-07-13'],
             8:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-14']
             
             }
