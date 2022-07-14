@@ -11,26 +11,7 @@ z = []
 
 tt = []
 
-#alto grau de complexidade
 
-#    for j in feira.datasdecompras:
-#         # 
-        # if feira.feira[i][8] == j:
-        #     cp2.append(i)
-        #     tam = len(cp2)
-        #     tamaux = (tam -2)
-        #     v = []
-        #     for v in cp2:
-        #         z.append(v)
-        #     auxz = len(z)
-        #     t = z[tamaux]
-        #     u = z[tamaux+1]
-        #     if tamaux >= -1 and (feira.feira[v][8] == feira.feira[t][8] or feira.feira[v][8] == feira.feira[u][8]):
-        #         tt.append(i)
-        #         cx[j] = [tt,'somapreco']
-        #     else:
-        #         tt = []
-        #         cx[j] = [i,'somapreco']
 
 tam = len(feira.datasdecompras)
 auxtam = tam - 1
