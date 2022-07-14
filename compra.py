@@ -155,7 +155,9 @@ def get_precototal():
             except:
                 continue
         precos[i] = preco_data
-    print(precos)
+    for i in precos.keys():
+        print("\nData: %s" %i)
+        print("Valor gasto: %.2f" %precos[i])
     input("Pressione enter para continuar...")
 
 
