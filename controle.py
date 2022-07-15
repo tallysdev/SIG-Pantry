@@ -3,6 +3,8 @@
 import feira
 import compra
 import os
+import verdisp
+import liscom
 
 def textocontr():
     os.system('cls')
@@ -28,10 +30,10 @@ def menu_dispensa():
     while opcao != '0':
 
         if opcao == '1':
-            print('hehe')
+            op = verdisp.menu_vd()
         
         elif opcao == '2':
-            print('hehe')
+            op = liscom.menu_lc()
         
         
         elif opcao == '3':
