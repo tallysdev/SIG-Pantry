@@ -1,6 +1,7 @@
 import datetime
 import feira
 import category
+
 import os
 
 def menu_compra():
@@ -159,6 +160,3 @@ def get_precototal():
         print("\nData: %s" %i)
         print("Valor gasto: %.2f" %precos[i])
     input("Pressione enter para continuar...")
-
-
-
