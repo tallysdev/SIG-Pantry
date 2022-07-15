@@ -8,7 +8,7 @@ import controle
 
 def infos_projeto():
     print('''
-    Dupla: Thomas Almeida e Tallys Aureliano
+    Dupla: Thomas Almeida(20220034970) e Tallys Aureliano(20220034890)
     Projeto: SIG_Pantry
     Versão: 0.01''')
     input("Pressione enter para continuar..")
