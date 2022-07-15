@@ -4,6 +4,7 @@
 import os
 import feira
 import compra
+import controle
 
 def infos_projeto():
     print('''
@@ -41,17 +42,7 @@ while opcao != 0:
         op = compra.menu_compra()
 
     elif opcao == 3 :
-        print('#########################################')
-        print('############ Menu de Estoque ##############')
-        print('#########################################')
-        print()
-        print('\n \t1 - Cadastrar Saídas')
-        print('\n \t2 - Reposiçaõ de items')
-        print('\n \t3 - Estoque por Validade')
-        print("\n \t4 - Proxima Compra")
-        print("\n \t5 - Criar feria padrão")
-        print("\n \t6 - Editar feira padrão")
-        print('#########################################')
+        op = controle.menu_dispensa()
 
     elif opcao == 9:
         infos_projeto()
