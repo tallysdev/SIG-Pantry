@@ -41,6 +41,8 @@ def alfabeticav():
     return
 
 def validadev():
+    for i in sorted(feira.feira, key = feira.feira.get):
+        print(feira.feira[i][4])
     print()
     return
 
