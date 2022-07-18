@@ -42,7 +42,9 @@ def alfabeticav():
 
 def validadev():
     for i in sorted(feira.feira, key = feira.feira.get):
-        print(feira.feira[i][4])
+        # aux = float(feira.feira[i][4])
+        # print(aux)
+         print(feira.feira[i][4])
     print()
     return
 
