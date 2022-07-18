@@ -35,7 +35,7 @@ def menu_vd():
 def alfabeticav():
     
     for i in sorted(feira.feira, key = feira.feira.get):
-        print(feira.feira[[i][0]])
+        print(feira.feira[i][0])
 
     return
 
