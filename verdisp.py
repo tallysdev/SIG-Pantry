@@ -1,5 +1,7 @@
 import feira
 
+preco = []
+
 def textovd():
     print('#########################################')
     print('########## Veja sua Dispensa ############')
@@ -27,7 +29,7 @@ def menu_vd():
         elif opcao == 3:
             op = precov()
         elif opcao == 4:
-            op = categoriav
+            op = categoriav()
         
         opcao = textovd()
     return
@@ -41,11 +43,16 @@ def alfabeticav():
     return
 
 def validadev():
-    for i in sorted(feira.feira, key = feira.feira.get):
-        # aux = float(feira.feira[i][4])
-        # print(aux)
-         print(feira.feira[i][4])
-    print()
+    for j in feira.feira.keys():    
+        preco.append(feira.feira[j][4])
+        
+    preco.sort()
+
+    for v in preco:
+        for i in feira.feira.keys():
+            if v == feira.feira[i][4]:
+                print('\n Preço:',v,'\n\t Nome:',feira.feira[i][0],', ','Categoria:',  feira.feira[i][1],', ','Quantidade atual:', feira.feira[i][3],'\n')
+  
     return
 
 def precov():
