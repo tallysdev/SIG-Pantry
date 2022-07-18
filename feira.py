@@ -14,7 +14,7 @@ feira = {   1:['pao','categoria','qtd_min','qtd','2.5','data_val','2022-07-10'],
             5:['berinjela','categoria','qtd_min','qtd','1','data_val','2022-07-12'],
             6:['janela','categoria','qtd_min','qtd','2','data_val','2022-07-13'],
             7:['alface','categoria','qtd_min','qtd','3','data_val','2022-07-13'],
-            8:['cururu','categoria','qtd_min','qtd','preco','data_val','2022-07-14']
+            8:['cururu','categoria','qtd_min','qtd','7','data_val','2022-07-14']
             
             }
 
