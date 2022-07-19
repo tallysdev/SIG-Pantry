@@ -78,4 +78,4 @@ def categoriav():
                 print('Preço: \t', cat[i][j][2])
                 print('Validade: \t', cat[i][j][3])
 
-    return
+    return  
