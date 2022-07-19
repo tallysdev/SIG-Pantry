@@ -7,14 +7,14 @@ import os
 precos = []
 itens_p = []
 
-feira = {   1:['pao','categoria','qtd_min','qtd',2.5,'data_val','2022-07-10'],
-            2:['cebola','categoria','qtd_min','qtd',5.8,'data_val','2022-07-10'],
-            3:['tomate','categoria','qtd_min','qtd',6.9,'data_val','2022-07-10'],
-            4:['aipim','categoria','qtd_min','qtd',15.1,'data_val','2022-07-11'],
-            5:['berinjela','categoria','qtd_min','qtd',1.0,'data_val','2022-07-12'],
-            6:['janela','categoria','qtd_min','qtd',2.9,'data_val','2022-07-13'],
-            7:['alface','categoria','qtd_min','qtd',3.0,'data_val','2022-07-13'],
-            8:['cururu','categoria','qtd_min','qtd',7.0,'data_val','2022-07-14']
+feira = {   1:['pao','1','qtd_min','qtd',2.5,'data_val','2022-07-10'],
+            2:['cebola','2','qtd_min','qtd',5.8,'data_val','2022-07-10'],
+            3:['tomate','3','qtd_min','qtd',6.9,'data_val','2022-07-10'],
+            4:['aipim','1','qtd_min','qtd',15.1,'data_val','2022-07-11'],
+            5:['berinjela','2','qtd_min','qtd',1.0,'data_val','2022-07-12'],
+            6:['janela','3','qtd_min','qtd',2.9,'data_val','2022-07-13'],
+            7:['alface','1','qtd_min','qtd',3.0,'data_val','2022-07-13'],
+            8:['cururu','2','qtd_min','qtd',7.0,'data_val','2022-07-14']
             
             }
 
@@ -181,3 +181,13 @@ def get_datas():
         else:
             datas[data] = [[i, feira[i][3], feira[i][4]]]
     return datas
+
+def get_cat():
+    auxcat = {}
+    for i in feira.keys():
+        cat = feira[i][1]
+        if cat in auxcat.keys():
+            auxcat[cat].append([i , feira[i][1],feira[i][3], feira[i][4], feira[i][5]])
+        else:
+            auxcat[cat] = [[i , feira[i][1],feira[i][3], feira[i][4], feira[i][5]]]
+    return auxcat
