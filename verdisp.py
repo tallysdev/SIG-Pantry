@@ -56,40 +56,34 @@ def precov():
     for v in preco:
         for i in feira.feira.keys():
             if v == feira.feira[i][4]:
-                print('\n Preço:',v,'\n\t Nome:',feira.feira[i][0],', ','Categoria:',  feira.feira[i][1],', ','Quantidade atual:', feira.feira[i][3],'\n')
+                print('----------------------\n')
+                print('\n Preço:',v)
+                print('\n\t Nome:',feira.feira[i][0])
+                print('Categoria:',  feira.feira[i][1])
+                print('Quantidade atual:', feira.feira[i][3],'\n')
     return
 
 def categoriav():
-    
-    # def get_datas():
-    # datas = {}
-    # for i in feira.keys():
-    #     data = feira[i][6]
-    #     if data in datas.keys():
-    #         datas[data].append([i , feira[i][3], feira[i][4]])
-    #     else:
-    #         datas[data] = [[i, feira[i][3], feira[i][4]]]
-    # return datas
 
-    # def listartodos():
-    # cx = feira.get_datas()
-    # print('#########################################')
-    # print('##########   Listar Compras  ############')
-    # print('#########################################')
-    # for i in cx.keys():
-    #         print('----------------------\n')
-    #         print('Data::\t', i)
-    #         for j in range(0, len(cx[i])):
-    #             print('\nProduto: \t', cx[i][j][0])
-    #             print('Qtd. comprada: \t', cx[i][j][1])
-    #             print('Preço: \t', cx[i][j][2])
+    cat = feira.get_cat()
+    print('#########################################')
+    print('##########   Listar Compras  ############')
+    print('#########################################')
+    for i in cat.keys():
+            print('----------------------\n')
+            print('Categoria::\t', i)
+            for j in range(0, len(cat[i])):
+                print('\nProduto: ', cat[i][j][0])
+                print('Qtd. comprada: \t', cat[i][j][1])
+                print('Preço: \t', cat[i][j][2])
+                print('Validade: \t', cat[i][j][3])
 
 
-    for i  in category.categorias.keys():
-        cat.append(i)
-        for j in feira.feira.values():
-            print()
-            if j[1] == str(i):
-                print(j[1])
+    # for i  in category.categorias.keys():
+    #     cat.append(i)
+    #     for j in feira.feira.values():
+    #         print()
+    #         if j[1] == str(i):
+    #             print(j[1])
     
     return
