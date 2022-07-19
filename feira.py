@@ -195,7 +195,7 @@ def get_cat():
 def get_val():
     vali = {}
     for i in feira.keys():
-        val = feira[i][6]
+        val = feira[i][5]
         if val in vali.keys():
             vali[val].append([feira[i][0], feira[i][1], feira[i][3], feira[i][4]])
         else:
