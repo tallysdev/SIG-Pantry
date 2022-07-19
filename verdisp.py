@@ -1,9 +1,11 @@
+import os
 import feira
 import category
 preco = []
 cat = {}
 
 def textovd():
+    os.system('cls')
     print('#########################################')
     print('########## Veja sua Dispensa ############')
     print('#########################################')
@@ -36,18 +38,19 @@ def menu_vd():
     return
 
 def alfabeticav():
-    
+    os.system('cls')
     for i in sorted(feira.feira, key = feira.feira.get):
         print('\n Nome: ',feira.feira[i][0])
         print('\t','Categoria:',  feira.feira[i][1])
         print('\t','Quantidade atual:', feira.feira[i][3])
-        print('\t','Preço:', feira.feira[i][4],'\n')
-
+        print('\t','Preço:', feira.feira[i][4],)
+        print('\t','Validade: ', feira.feira[i][5],'\n')
+    input('Digite Enter para seguir...')
 
     return
 
 def validadev():
-    
+    os.system('cls')    
     dade = feira.get_val()
     for i in dade.keys():
             print('----------------------\n')
@@ -56,10 +59,13 @@ def validadev():
                 print('\t','Produto: ', dade[i][j][0])
                 print('\t','Categoria: ', dade[i][j][1])
                 print('\t','Quantidade comprada: ', dade[i][j][2])
-                print('\t','Preço: ', dade[i][j][3],'aaaaaaaa\n')
+                print('\t','Preço: ', dade[i][j][3],'\n')
+    
+    input('Digite Enter para seguir...')
     return
 
 def precov():
+    os.system('cls')
     for j in feira.feira.keys():    
         preco.append(feira.feira[j][4])
         
@@ -74,10 +80,13 @@ def precov():
                 print('\t','Categoria:',  feira.feira[i][1])
                 print('\t','Quantidade atual:', feira.feira[i][3])
                 print('\t','Validade:', feira.feira[i][4],'\n')
+    
+    input('Digite Enter para seguir...')
+
     return
 
 def categoriav():
-
+    os.system('cls')
     cat = feira.get_cat()
     for i in cat.keys():
             print('----------------------\n')
@@ -87,5 +96,7 @@ def categoriav():
                 print('\t','Qtd. comprada: ', cat[i][j][1])
                 print('\t','Preço: ', cat[i][j][2])
                 print('\t','Validade: ', cat[i][j][3],'\n')
-
+    
+    input('Digite Enter para seguir...')
+    
     return  
