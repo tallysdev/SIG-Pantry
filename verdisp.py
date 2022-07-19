@@ -43,6 +43,10 @@ def alfabeticav():
     return
 
 def validadev():
+    print()
+    return
+
+def precov():
     for j in feira.feira.keys():    
         preco.append(feira.feira[j][4])
         
@@ -52,11 +56,6 @@ def validadev():
         for i in feira.feira.keys():
             if v == feira.feira[i][4]:
                 print('\n Preço:',v,'\n\t Nome:',feira.feira[i][0],', ','Categoria:',  feira.feira[i][1],', ','Quantidade atual:', feira.feira[i][3],'\n')
-  
-    return
-
-def precov():
-    print()
     return
 
 def categoriav():
