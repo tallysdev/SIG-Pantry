@@ -38,13 +38,25 @@ def menu_vd():
 def alfabeticav():
     
     for i in sorted(feira.feira, key = feira.feira.get):
-        print('\n Nome:',feira.feira[i][0], '\n\t','Categoria:',  feira.feira[i][1],'Quantidade atual:', feira.feira[i][3],'Preço:', feira.feira[i][4],'\n')
+        print('\n Nome: ',feira.feira[i][0])
+        print('\t','Categoria:',  feira.feira[i][1])
+        print('\t','Quantidade atual:', feira.feira[i][3])
+        print('\t','Preço:', feira.feira[i][4],'\n')
 
 
     return
 
 def validadev():
-    print()
+    
+    dade = feira.get_val()
+    for i in dade.keys():
+            print('----------------------\n')
+            print('Validade: ', i)
+            for j in range(0, len(dade[i])):
+                print('\t','Produto: ', dade[i][j][0])
+                print('\t','Categoria: ', dade[i][j][1])
+                print('\t','Quantidade comprada: ', dade[i][j][2])
+                print('\t','Preço: ', dade[i][j][3],'aaaaaaaa\n')
     return
 
 def precov():
@@ -57,25 +69,23 @@ def precov():
         for i in feira.feira.keys():
             if v == feira.feira[i][4]:
                 print('----------------------\n')
-                print('\n Preço:',v)
-                print('\n\t Nome:',feira.feira[i][0])
-                print('Categoria:',  feira.feira[i][1])
-                print('Quantidade atual:', feira.feira[i][3],'\n')
+                print('\n Preço: ',v)
+                print('\t','Nome:',feira.feira[i][0])
+                print('\t','Categoria:',  feira.feira[i][1])
+                print('\t','Quantidade atual:', feira.feira[i][3])
+                print('\t','Validade:', feira.feira[i][4],'\n')
     return
 
 def categoriav():
 
     cat = feira.get_cat()
-    print('#########################################')
-    print('##########   Listar Compras  ############')
-    print('#########################################')
     for i in cat.keys():
             print('----------------------\n')
-            print('Categoria::\t', i)
+            print('Categoria: ', i)
             for j in range(0, len(cat[i])):
-                print('\nProduto: ', cat[i][j][0])
-                print('Qtd. comprada: \t', cat[i][j][1])
-                print('Preço: \t', cat[i][j][2])
-                print('Validade: \t', cat[i][j][3])
+                print('\t','Produto: ', cat[i][j][0])
+                print('\t','Qtd. comprada: ', cat[i][j][1])
+                print('\t','Preço: ', cat[i][j][2])
+                print('\t','Validade: ', cat[i][j][3],'\n')
 
     return  
