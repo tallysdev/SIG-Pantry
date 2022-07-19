@@ -187,7 +187,7 @@ def get_cat():
     for i in feira.keys():
         cat = feira[i][1]
         if cat in auxcat.keys():
-            auxcat[cat].append([i, feira[i][3], feira[i][4], feira[i][5]])
+            auxcat[cat].append([feira[i][0], feira[i][3], feira[i][4], feira[i][5]])
         else:
-            auxcat[cat] = [[i, feira[i][3], feira[i][4], feira[i][5]]]
+            auxcat[cat] = [[feira[i][0], feira[i][3], feira[i][4], feira[i][5]]]
     return auxcat
