@@ -1,7 +1,7 @@
 import feira
 import category
 preco = []
-cat = []
+cat = {}
 
 def textovd():
     print('#########################################')
@@ -60,11 +60,36 @@ def precov():
     return
 
 def categoriav():
-    # print(category.categorias)
-    # for i in category.categorias.keys():
-    #     for s in feira.feira.keys():
-    #         if feira.feira[s][1] == str(i):
-    #             print('a')
+    
+    # def get_datas():
+    # datas = {}
+    # for i in feira.keys():
+    #     data = feira[i][6]
+    #     if data in datas.keys():
+    #         datas[data].append([i , feira[i][3], feira[i][4]])
+    #     else:
+    #         datas[data] = [[i, feira[i][3], feira[i][4]]]
+    # return datas
 
+    # def listartodos():
+    # cx = feira.get_datas()
+    # print('#########################################')
+    # print('##########   Listar Compras  ############')
+    # print('#########################################')
+    # for i in cx.keys():
+    #         print('----------------------\n')
+    #         print('Data::\t', i)
+    #         for j in range(0, len(cx[i])):
+    #             print('\nProduto: \t', cx[i][j][0])
+    #             print('Qtd. comprada: \t', cx[i][j][1])
+    #             print('Preço: \t', cx[i][j][2])
+
+
+    for i  in category.categorias.keys():
+        cat.append(i)
+        for j in feira.feira.values():
+            print()
+            if j[1] == str(i):
+                print(j[1])
     
     return
