@@ -1,6 +1,7 @@
 import feira
-
+import category
 preco = []
+cat = []
 
 def textovd():
     print('#########################################')
@@ -59,5 +60,11 @@ def precov():
     return
 
 def categoriav():
-    print()
+    # print(category.categorias)
+    # for i in category.categorias.keys():
+    #     for s in feira.feira.keys():
+    #         if feira.feira[s][1] == str(i):
+    #             print('a')
+
+    
     return
