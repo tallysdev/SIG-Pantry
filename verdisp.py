@@ -78,12 +78,4 @@ def categoriav():
                 print('Preço: \t', cat[i][j][2])
                 print('Validade: \t', cat[i][j][3])
 
-
-    # for i  in category.categorias.keys():
-    #     cat.append(i)
-    #     for j in feira.feira.values():
-    #         print()
-    #         if j[1] == str(i):
-    #             print(j[1])
-    
     return
