@@ -6,6 +6,8 @@ import os
 import verdisp
 import liscom
 
+saidas = feira.feira
+
 def textocontr():
     os.system('cls')
     print('#########################################')
