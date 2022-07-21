@@ -26,14 +26,25 @@ def menu_lc():
     while opcao !=0:
 
         if opcao == 1:
-            print()
+            op = ls_fal()
         elif opcao == 2:
-            print()
+            op = ls_val()
         elif opcao == 3:
-            print()
+            op = lscaegory.menulsc()
         elif opcao == 4:
-            print()
+            op = ls_geral()
         elif opcao == 5:
-            print()
+            op = info_m()
     return
 
+def ls_fal():
+    print()
+
+def ls_val():
+    print()
+
+def ls_geral():
+    print()
+
+def info_m():
+    print()
