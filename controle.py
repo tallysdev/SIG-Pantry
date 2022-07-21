@@ -7,6 +7,7 @@ import verdisp
 import liscom
 
 saidas = feira.feira
+print(saidas)
 
 def textocontr():
     os.system('cls')
