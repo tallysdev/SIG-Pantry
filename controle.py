@@ -35,8 +35,8 @@ def menu_dispensa():
             op = verdisp.menu_vd()
         
         elif opcao == '2':
-            # op = liscom.menu_lc()
-            print('em desenvolvimento')
+            op = liscom.menu_lc()
+            # print('em desenvolvimento')
         
         
         elif opcao == '3':
