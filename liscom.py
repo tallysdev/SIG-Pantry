@@ -1,3 +1,4 @@
+import datetime 
 import os
 import feira
 import lscaegory
@@ -36,20 +37,33 @@ def menu_lc():
             op = ls_geral()
         elif opcao == 5:
             op = info_m()
-    return
+
+        opcao = textoliscom()
+    
+aux = datetime.date.today()
+aux1 = str(aux)
 
 def ls_fal():
-    vali = []
-    for i in feira.saidas.keys():
-        print(i)
-
-    print()
+    datas = []
+    aux = feira.get_datas()
+    for i in aux.keys():
+        r = datetime.datetime.strptime(i, '%Y-%m-%d').date()
+        datas.append(r)    
+    print(datas)
+    input('...')
+    for j in datas:  
+        aux2  = datetime.datetime.strptime(aux1,'%Y-%m-%d').date()
+        if j != aux2:
+            print('aiai amor')
+    input()
 
 def ls_val():
     print()
-
+    return
 def ls_geral():
     print()
+    return
 
 def info_m():
     print()
+    return
