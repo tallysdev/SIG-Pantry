@@ -1,6 +1,7 @@
 import os
 import feira
 import lscaegory
+import controle
 
 def textoliscom():
     os.system('cls')
@@ -38,6 +39,10 @@ def menu_lc():
     return
 
 def ls_fal():
+    vali = []
+    for i in controle.saidas.keys():
+        print(i)
+
     print()
 
 def ls_val():
