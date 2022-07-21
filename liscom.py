@@ -1,6 +1,6 @@
 import os
 import feira
-
+import lscaegory
 
 def textoliscom():
     os.system('cls')
