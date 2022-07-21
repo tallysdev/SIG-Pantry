@@ -6,8 +6,7 @@ import os
 import verdisp
 import liscom
 
-saidas = feira.feira
-print(saidas)
+
 
 def textocontr():
     os.system('cls')
@@ -36,7 +35,8 @@ def menu_dispensa():
             op = verdisp.menu_vd()
         
         elif opcao == '2':
-            op = liscom.menu_lc()
+            # op = liscom.menu_lc()
+            print('em desenvolvimento')
         
         
         elif opcao == '3':
