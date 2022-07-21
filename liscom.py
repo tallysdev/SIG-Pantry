@@ -40,7 +40,7 @@ def menu_lc():
 
 def ls_fal():
     vali = []
-    for i in controle.saidas.keys():
+    for i in feira.saidas.keys():
         print(i)
 
     print()
