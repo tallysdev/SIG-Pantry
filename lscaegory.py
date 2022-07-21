@@ -2,7 +2,7 @@ import os
 import feira
 import liscom
 
-def menulsg():
+def menulsc():
     print()
 
 
