@@ -18,6 +18,8 @@ feira = {   1:['pao','1','qtd_min','qtd',2.5,'2023-07-10','2022-07-10'],
             
             }
 
+saidas = feira
+
 codigosdebarra = []
 
 def texto():
