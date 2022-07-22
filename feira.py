@@ -7,16 +7,18 @@ import os
 precos = []
 itens_p = []
 
-feira = {   1:['nome','categoria','qtd_min','qtd','2.5','data_val','2022-07-10'],
-            2:['nome','categoria','qtd_min','qtd','5.8','data_val','2022-07-10'],
-            3:['nome','categoria','qtd_min','qtd','6.9','data_val','2022-07-10'],
-            4:['nome','categoria','qtd_min','qtd','5.1','data_val','2022-07-11'],
-            5:['nome','categoria','qtd_min','qtd','1','data_val','2022-07-12'],
-            6:['nome','categoria','qtd_min','qtd','2','data_val','2022-07-13'],
-            7:['nome','categoria','qtd_min','qtd','3','data_val','2022-07-13'],
-            8:['nome','categoria','qtd_min','qtd','preco','data_val','2022-07-14']
+feira = {   1:['pao','1','10','5',2.5,'2023-07-10','2022-07-10'],
+            2:['cebola','2','5','2',5.8,'2023-07-12','2022-07-10'],
+            3:['tomate','3','10','3',6.9,'2023-07-13','2022-07-10'],
+            4:['aipim','1','10','8',15.1,'2023-07-04','2022-07-11'],
+            5:['berinjela','2','10','6',1.0,'2023-07-10','2022-07-12'],
+            6:['janela','3','10','5',2.9,'2023-07-22','2022-07-13'],
+            7:['alface','1','10','3',3.0,'2023-07-10','2022-07-13'],
+            8:['cururu','2','10','5',7.0,'2023-07-30','2022-07-14']
             
             }
+
+saidas = feira
 
 codigosdebarra = []
 
@@ -181,3 +183,23 @@ def get_datas():
         else:
             datas[data] = [[i, feira[i][3], feira[i][4]]]
     return datas
+
+def get_cat():
+    auxcat = {}
+    for i in feira.keys():
+        cat = feira[i][1]
+        if cat in auxcat.keys():
+            auxcat[cat].append([feira[i][0], feira[i][3], feira[i][4], feira[i][5]])
+        else:
+            auxcat[cat] = [[feira[i][0], feira[i][3], feira[i][4], feira[i][5]]]
+    return auxcat
+
+def get_val():
+    vali = {}
+    for i in feira.keys():
+        val = feira[i][5]
+        if val in vali.keys():
+            vali[val].append([feira[i][0], feira[i][1], feira[i][3], feira[i][4]])
+        else:
+            vali[val] = [[feira[i][0], feira[i][1], feira[i][3], feira[i][4]]]
+    return vali

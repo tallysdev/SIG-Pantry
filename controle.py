@@ -6,6 +6,8 @@ import os
 import verdisp
 import liscom
 
+
+
 def textocontr():
     os.system('cls')
     print('#########################################')
@@ -34,6 +36,7 @@ def menu_dispensa():
         
         elif opcao == '2':
             op = liscom.menu_lc()
+            # print('em desenvolvimento')
         
         
         elif opcao == '3':
