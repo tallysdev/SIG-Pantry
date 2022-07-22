@@ -40,22 +40,35 @@ def menu_lc():
 
         opcao = textoliscom()
     
-aux = datetime.date.today()
-aux1 = str(aux)
-
-def ls_fal():
+def compras_datadas():
+    aux = datetime.date.today()
+    aux1 = str(aux)
     datas = []
+    cdt = []
     aux = feira.get_datas()
     for i in aux.keys():
         r = datetime.datetime.strptime(i, '%Y-%m-%d').date()
         datas.append(r)    
-    print(datas)
-    input('...')
-    for j in datas:  
-        aux2  = datetime.datetime.strptime(aux1,'%Y-%m-%d').date()
-        if j != aux2:
-            print('aiai amor')
-    input()
+        for j in datas:  
+            ww = 0
+            ww = j
+            aux2  = datetime.datetime.strptime(aux1,'%Y-%m-%d').date()
+            delta = ww - aux2
+            if delta.days < -9 and not j in cdt:
+                cdt.append(j)
+    return cdt
+
+def ls_fal():
+    data = compras_datadas()
+    
+    
+    
+    
+    
+    
+    
+    input('\n digite Enter para sair')
+
 
 def ls_val():
     print()
