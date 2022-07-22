@@ -9,7 +9,7 @@ def textoliscom():
     print('#########################################')
     print('########## Lista de Compras ############')
     print('#########################################')
-    print('\n\t 1 - Lista de Compras com base em nos alimentos faltando ')
+    print('\n\t 1 - Lista de Compras com base em nos produtos que estão acabando ')
     print('\n\t 2 - Lista de Compras com base na data de Validade  ')
     print('\n\t 3 - Lista de Compras por categorias ')
     print('\n\t 4 - Lista de Compras Geral ')
@@ -59,13 +59,22 @@ def compras_datadas():
     return cdt
 
 def ls_fal():
+    lsfalz = feira.saidas
+    dd = {}
     data = compras_datadas()
-    
-    
-    
-    
-    
-    
+    datastr = []
+    for i in data:
+        aux = str(i)
+        datastr.append(aux)
+
+    for a in lsfalz.keys():
+        for b in datastr:
+            if lsfalz[a][6] == b:
+                c = int(lsfalz[a][2])
+                d = int(lsfalz[a][3])
+                if d < c:
+                    dd.update({a:[[lsfalz[a][0]],[lsfalz[a][1]],[lsfalz[a][2]],[lsfalz[a][3]],[lsfalz[a][4]],[lsfalz[a][5]],[lsfalz[a][6]]]})
+    print(dd)
     
     input('\n digite Enter para sair')
 
