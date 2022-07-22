@@ -84,32 +84,53 @@ def ls_fal():
     
     input('\n digite Enter para sair')
 
+# def plmds():
+# 
+#                                   Aqui eu organizei as datas por ordem e já deixei em formato de data.
+#     auxk = []
+#     ord = feira.get_val()
+#     lsfalz = feira.saidas
+#     dd = {}
+#     data = compras_datadas()
+#     datastr = []
+#     teste = []
+    
+#     for i in data:
+#         aux = str(i)
+#         datastr.append(aux)
+#     gg = 1
+#     for a in lsfalz.keys():
+#         for b in datastr:
+#             if lsfalz[a][6] == b:
+#                 auxk.append(a)
+#                 # print('entrou')
+#                 t = datetime.datetime.strptime(lsfalz[a][5], '%Y-%m-%d').date()
+#                 # if t not in teste:
+                    
+#                 teste.append(t)
+#                 teste.sort()
+
+    
+    
+#     return teste
+
 def ls_val():
-    auxk = []
-    ord = feira.get_val()
-    lsfalz = feira.saidas
-    dd = {}
-    data = compras_datadas()
-    datastr = []
-    teste = []
-    for i in data:
-        aux = str(i)
-        datastr.append(aux)
+    # essa parte eu nao soube fazer
 
-    for a in lsfalz.keys():
-        for b in datastr:
-            if lsfalz[a][6] == b:
-                print('entrou')
-                t = datetime.datetime.strptime(lsfalz[a][5], '%Y-%m-%d').date()
-                teste.append(t)
-                teste.sort()
-    
-    
 
+    # dt = plmds()
+    # daux = feira.saidas
+    # v = 'v'
+    # for i in daux.keys():
+    #     t = datetime.datetime.strptime(daux[i][5], '%Y-%m-%d').date()
+    #     for j in dt:        
+    #         if :
+    #             print('a')
+    # print(dt)
     
     
-    input('aa')
-    return
+    input('q')
+
 def ls_geral():
     print()
     return
