@@ -9,12 +9,12 @@ def textoliscom():
     print('#########################################')
     print('########## Lista de Compras ############')
     print('#########################################')
-    print('\n\t 1 - Lista de Compras com base em nos produtos que estão acabando ')
-    print('\n\t 2 - Lista de Compras com base na data de Validade  ')
-    print('\n\t 3 - Lista de Compras por categorias ')
-    print('\n\t 4 - Lista de Compras Geral ')
-    print('\n\t 5 - informações sobre este modulo ')
-    print('\n\t 0 - Sair ')
+    print('\n 1 - Lista de Compras com base em menor quantidade ')
+    print('\n 2 - Lista de Compras com base na data de Validade  ')
+    print('\n 3 - Lista de Compras por categorias ')
+    print('\n 4 - Lista de Compras Geral ')
+    print('\n 5 - informações sobre este modulo ')
+    print('\n 0 - Sair ')
     try:
         opcao = int(input())
     except:
