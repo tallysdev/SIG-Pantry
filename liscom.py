@@ -84,9 +84,31 @@ def ls_fal():
     
     input('\n digite Enter para sair')
 
-
 def ls_val():
-    print()
+    auxk = []
+    ord = feira.get_val()
+    lsfalz = feira.saidas
+    dd = {}
+    data = compras_datadas()
+    datastr = []
+    teste = []
+    for i in data:
+        aux = str(i)
+        datastr.append(aux)
+
+    for a in lsfalz.keys():
+        for b in datastr:
+            if lsfalz[a][6] == b:
+                print('entrou')
+                t = datetime.datetime.strptime(lsfalz[a][5], '%Y-%m-%d').date()
+                teste.append(t)
+                teste.sort()
+    
+    
+
+    
+    
+    input('aa')
     return
 def ls_geral():
     print()
