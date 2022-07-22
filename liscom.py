@@ -72,9 +72,15 @@ def ls_fal():
             if lsfalz[a][6] == b:
                 c = int(lsfalz[a][2])
                 d = int(lsfalz[a][3])
+                df = c - d
                 if d < c:
-                    dd.update({a:[[lsfalz[a][0]],[lsfalz[a][1]],[lsfalz[a][2]],[lsfalz[a][3]],[lsfalz[a][4]],[lsfalz[a][5]],[lsfalz[a][6]]]})
-    print(dd)
+                    dd.update({a:[[lsfalz[a][0]],[lsfalz[a][1]],[lsfalz[a][2]],[lsfalz[a][3]],[lsfalz[a][4]],[lsfalz[a][5]],[lsfalz[a][6]],df]})
+    
+    print('Precisa Comprar esses Produtos: ')
+    for e in dd.keys():
+        print('\n Nome: ', dd[e][0])
+        print('\t','Em',  dd[e][7],'unidades')
+        print()
     
     input('\n digite Enter para sair')
 
