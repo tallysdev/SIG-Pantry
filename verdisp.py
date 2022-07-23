@@ -10,8 +10,8 @@ def textovd():
     print('########## Veja sua Dispensa ############')
     print('#########################################')
     print('\n\t 1 - Ver por ordem alfabetica ')
-    print('\n\t 2 - Ver por data de validade \n\t "da mais recente a mais antiga" ')
-    print('\n\t 3 - Ver por preço \n\t "do mais barato ao mais caro" ')
+    print('\n\t 2 - Ver por data de validade (da mais recente a mais antiga)')
+    print('\n\t 3 - Ver por preço (do mais barato ao mais caro)')
     print('\n\t 4 - Ver por categoria ')
     print('\n\t 0 - Sair ')
     try:

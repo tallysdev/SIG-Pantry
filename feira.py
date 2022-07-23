@@ -1,5 +1,5 @@
 import category
-
+import pickle
 import datetime
 
 import os
@@ -7,16 +7,15 @@ import os
 precos = []
 itens_p = []
 
-feira = {   1:['pao','1','10','5',2.5,'2023-07-10','2022-07-10'],
-            2:['cebola','2','5','2',5.8,'2023-07-12','2022-07-10'],
-            3:['tomate','3','10','3',6.9,'2023-07-13','2022-07-10'],
-            4:['aipim','1','10','8',15.1,'2023-07-04','2022-07-11'],
-            5:['berinjela','2','10','6',1.0,'2023-07-10','2022-07-12'],
-            6:['janela','3','10','5',2.9,'2023-07-22','2022-07-13'],
-            7:['alface','1','10','3',3.0,'2023-07-10','2022-07-13'],
-            8:['cururu','2','10','5',7.0,'2023-07-30','2022-07-14']
-            
-            }
+feira = {}
+
+try:
+    arqFeira = open('prods.docx', 'rb')
+    feira = pickle.load(arqFeira)
+    arqFeira.close()
+except:
+    arqFeira = open('prods.docx', 'wb')
+    arqFeira.close()
 
 saidas = feira
 
@@ -27,12 +26,12 @@ def texto():
     print('#########################################')
     print('############ Menu Produtos ##############')
     print('#########################################')
-    print('\n \t1 - Cadastrar Produtos')
-    print('\n \t2 - Editar Produtos')
-    print('\n \t3 - Remover Produtos')
-    print('\n \t4 - Pesquisar nos Produtos')
-    print('\n \t5 - Acessar Categorias')
-    print("\n \t0 - Sair")
+    print('\n 1 - Cadastrar Produtos')
+    print('\n 2 - Editar Produtos')
+    print('\n 3 - Remover Produtos')
+    print('\n 4 - Pesquisar nos Produtos')
+    print('\n 5 - Acessar Categorias')
+    print("\n 0 - Sair")
     print('#########################################')
     opcao = input()
     return opcao
@@ -94,6 +93,10 @@ def cadastrar_feira():
         data_compra = datetime.date.today()
 
         feira.update({codigob:[nome,cat,qtd_min,qtd,preco,data,data_compra]})
+        
+        arqFeira = open('prods.docx', 'wb')
+        pickle.dump(feira, arqFeira)
+        arqFeira.close()
 
     return
 
@@ -157,6 +160,10 @@ def editar_produtos():
         data = input('Informe a validade de {}\t' .format(nome))
 
         feira.update({chaveaux:[nome,cat,qtd_min,qtd,preco,data,feira[chaveaux][8]]})
+
+        arqFeira = open('prods.docx', 'wb')
+        pickle.dump(feira, arqFeira)
+        arqFeira.close()
     
     else:
        print('\nNão exite produto com esse nome.')
@@ -165,11 +172,13 @@ def remover_produto():
     print('#########################################')
     print('########   Remover Produtos  ############')
     print('#########################################')
-    chaveaux = input('\nInforme o codigo de barras do produto desejado:\t')
+    chaveaux = int(input('\nInforme o codigo de barras do produto desejado:\t'))
     if chaveaux in feira.keys():
         feira.pop(chaveaux)
+        arqFeira = open('prods.docx', 'wb')
+        pickle.dump(feira, arqFeira)
+        arqFeira.close()
         print('Pronto, o produto {} foi removido'.format(chaveaux))
-        
         
     else:
        print('\nNão exite produto com esse nome.')
