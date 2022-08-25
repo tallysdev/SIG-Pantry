@@ -40,7 +40,7 @@ def menu_dispensa():
         
         
         elif opcao == '3':
-            print('hehe')
+            op  = saidas()
         
         
         elif opcao == '4':
@@ -48,21 +48,25 @@ def menu_dispensa():
 
         opcao = textocontr()
 
-def ver_d():
-    print('teste')
-
-    return
-
-
-def lista_c():
-    print('teste')
-
-    return
-
-
 def saidas():
-    print('teste')
+    print(feira.saidas)
+    lembra = input('Olá, Você lembra o codigo de barras do produto?')
+    if lembra != 'sim' or lembra != 's':
+        print('Então veja os produtos logo abaixo:')
+        print()
+        feira.listartodos()
+    p = int(input('Gostaria de cadastrar quantos produtos?\t'))
+    for i in range(p):
+        x = int(input('Informe o codigo de barras do produto:\t'))
+        nova=input('agora informe a quantidade que resta do produto {}'.format(feira.saidas[x][0]))
+        if int(nova) > int(feira.saidas[x][3]):
+            print('Aqui cadastramos saídas, não entradas, por favor informe a saida correta')
+            nova=input('agora informe a quantidade que resta do produto {}'.format(feira.saidas[x][0]))
+        else: 
+            feira.saidas[x][3]=nova
 
+    print(feira.saidas)
+    input('\n\naa')
     return
 
 
